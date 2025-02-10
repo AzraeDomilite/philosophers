@@ -51,15 +51,28 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 	@echo "$(GREEN)Compilation of philo successful! 🧠💭$(RESET)"
+
 valgrind:
-	valgrind --leak-check=full --log-file=valgrind.log --show-leak-kinds=all --track-fds=all --default-suppressions=yes ./$(NAME)
-	#--gen-suppressions=all
+	@if [ -z "$(ARGS)" ]; then \
+		echo "$(RED)Usage: make valgrind ARGS=\"<number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]\"$(RESET)"; \
+	else \
+		mkdir -p logs && \
+		valgrind \
+			--leak-check=full \
+			--show-leak-kinds=all \
+			--track-origins=yes \
+			--track-fds=yes \
+			--log-file=logs/valgrind_$(shell date +%H:%M:%S_%d_%m_%Y).log \
+			./$(NAME) $(ARGS); \
+	fi
+
 clean:
 	@rm -rf $(OBJ_PATH)
 	@echo "$(RED)Clean of philo successful 🧹$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f *.log
 
 re: fclean all
 

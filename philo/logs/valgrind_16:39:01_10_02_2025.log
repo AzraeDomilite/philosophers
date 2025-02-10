@@ -1,0 +1,29 @@
+==958838== Memcheck, a memory error detector
+==958838== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==958838== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==958838== Command: ./philo 4 800 200 200 7
+==958838== Parent PID: 958836
+==958838== 
+==958838== 
+==958838== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==958838== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==958838==    <inherited from parent>
+==958838== 
+==958838== Open AF_UNIX socket 45: <unknown>
+==958838==    <inherited from parent>
+==958838== 
+==958838== Open file descriptor 43: /home/blucken/.config/Code/logs/20250210T141546/ptyhost.log
+==958838==    <inherited from parent>
+==958838== 
+==958838== Open file descriptor 3: /home/blucken/Documents/philosophers/philo/logs/valgrind_16:39:01_10_02_2025.log
+==958838==    <inherited from parent>
+==958838== 
+==958838== 
+==958838== HEAP SUMMARY:
+==958838==     in use at exit: 0 bytes in 0 blocks
+==958838==   total heap usage: 13 allocs, 13 frees, 3,344 bytes allocated
+==958838== 
+==958838== All heap blocks were freed -- no leaks are possible
+==958838== 
+==958838== For lists of detected and suppressed errors, rerun with: -s
+==958838== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
