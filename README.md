@@ -41,9 +41,11 @@ git clone <repository-url>
 cd philosophers
 
 # For mandatory part
+cd philo
 make -C philo
 
 # For bonus part
+cd philo_bonus
 make -C philo_bonus
 ```
 
