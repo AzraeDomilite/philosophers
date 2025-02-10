@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 11:40:34 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 11:40:43 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/10 17:15:04 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/10 17:20:59 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,21 @@ void	*ate_enought_monitor(void *data_monitor)
 		|| data->nb_of_philos == 1)
 		return (NULL);
 	start_delay(data->start_timer);
+	sem_wait(data->sem_philo_full);
 	while (data->philo_full_count < data->nb_of_philos)
 	{
 		if (has_simulation_stopped(data))
 			return (NULL);
-		sem_wait(data->sem_philo_full);
+
 		if (!has_simulation_stopped(data))
-			data->philo_full_count += 1;
+			data->philo_full_count += 1; 
 		else
 			return (NULL);
 	}
 	sem_wait(data->sem_stop);
 	data->sim_status = true;
 	kill_all_philos(data, EXIT_SUCCESS);
+	sem_post(data->sem_philo_full);
 	sem_post(data->sem_philo_dead);
 	sem_post(data->sem_stop);
 	return (NULL);
