@@ -1,0 +1,676 @@
+==908758== Memcheck, a memory error detector
+==908758== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==908758== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==908758== Command: ./philo_bonus 2 200 200 200
+==908758== Parent PID: 885788
+==908758== 
+==908758== Conditional jump or move depends on uninitialised value(s)
+==908758==    at 0x10A783: ft_strlen (utils.c:20)
+==908758==    by 0x10B2D0: set_sem_name (sem_names.c:25)
+==908758==    by 0x10B380: set_names (sem_names.c:40)
+==908758==    by 0x10A432: init_philo (init_data.c:71)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== Conditional jump or move depends on uninitialised value(s)
+==908758==    at 0x10A783: ft_strlen (utils.c:20)
+==908758==    by 0x10B30D: set_sem_name (sem_names.c:31)
+==908758==    by 0x10B380: set_names (sem_names.c:40)
+==908758==    by 0x10A432: init_philo (init_data.c:71)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== Conditional jump or move depends on uninitialised value(s)
+==908758==    at 0x10A811: ft_strcat (utils.c:41)
+==908758==    by 0x10B352: set_sem_name (sem_names.c:33)
+==908758==    by 0x10B380: set_names (sem_names.c:40)
+==908758==    by 0x10A432: init_philo (init_data.c:71)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908760== 
+==908760== Process terminating with default action of signal 2 (SIGINT)
+==908758== 
+==908758== Process terminating with default action of signal 2 (SIGINT)
+==908761== 
+==908761== Process terminating with default action of signal 2 (SIGINT)
+==908760==    at 0x4903117: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==908760==    by 0x4903117: __futex_abstimed_wait_common (futex-internal.c:87)
+==908758==    at 0x49577F8: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:78)
+==908761==    at 0x4903117: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==908760==    by 0x4903117: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==908761==    by 0x4903117: __futex_abstimed_wait_common (futex-internal.c:87)
+==908758==    by 0x495C676: nanosleep (nanosleep.c:25)
+==908761==    by 0x4903117: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==908760==    by 0x490EC77: __new_sem_wait_slow64.constprop.0 (sem_waitcommon.c:183)
+==908758==    by 0x498DF2E: usleep (usleep.c:31)
+==908760==    by 0x109A3F: take_fork (philo.c:21)
+==908761==    by 0x490EC77: __new_sem_wait_slow64.constprop.0 (sem_waitcommon.c:183)
+==908758==    by 0x10B0CF: stop_philo (exit.c:73)
+==908760==    by 0x109B61: philo_eat_sleep (philo.c:48)
+==908761==    by 0x109A3F: take_fork (philo.c:21)
+==908758==    by 0x109496: main (main.c:28)
+==908760==    by 0x109C8B: philo_routine (philo.c:73)
+==908761==    by 0x109B61: philo_eat_sleep (philo.c:48)
+==908760==    by 0x109D9F: philo (philo.c:100)
+==908761==    by 0x109C8B: philo_routine (philo.c:73)
+==908760==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908761==    by 0x109D9F: philo (philo.c:100)
+==908760==    by 0x10946D: main (main.c:26)
+==908761==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908761==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== FILE DESCRIPTORS: 6 open (3 std) at exit.
+==908760== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==908760==    <inherited from parent>
+==908760== 
+==908760== Open file descriptor 43: /home/blucken/.config/Code/logs/20250210T113655/ptyhost.log
+==908760==    <inherited from parent>
+==908760== 
+==908760== Open file descriptor 3: /home/blucken/Documents/philotest/philosophers_bonus/valgrind.log
+==908760==    <inherited from parent>
+==908760== 
+==908760== Open file descriptor 2: /dev/pts/1
+==908760==    <inherited from parent>
+==908760== 
+==908760== Open file descriptor 1: /dev/pts/1
+==908760==    <inherited from parent>
+==908760== 
+==908760== Open file descriptor 0: /dev/pts/1
+==908758== 
+==908760==    <inherited from parent>
+==908758== FILE DESCRIPTORS: 6 open (3 std) at exit.
+==908760== 
+==908758== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==908760== 
+==908758==    <inherited from parent>
+==908758== 
+==908758== Open file descriptor 43: /home/blucken/.config/Code/logs/20250210T113655/ptyhost.log
+==908760== HEAP SUMMARY:
+==908760==     in use at exit: 2,154 bytes in 23 blocks
+==908760==   total heap usage: 25 allocs, 2 frees, 2,176 bytes allocated
+==908760== 
+==908758==    <inherited from parent>
+==908758== 
+==908758== Open file descriptor 3: /home/blucken/Documents/philotest/philosophers_bonus/valgrind.log
+==908758==    <inherited from parent>
+==908758== 
+==908758== Open file descriptor 2: /dev/pts/1
+==908758==    <inherited from parent>
+==908758== 
+==908758== Open file descriptor 1: /dev/pts/1
+==908758==    <inherited from parent>
+==908758== 
+==908758== Open file descriptor 0: /dev/pts/1
+==908758==    <inherited from parent>
+==908758== 
+==908758== 
+==908758== HEAP SUMMARY:
+==908758==     in use at exit: 1,402 bytes in 23 blocks
+==908758==   total heap usage: 25 allocs, 2 frees, 1,424 bytes allocated
+==908758== 
+==908761== 
+==908761== FILE DESCRIPTORS: 6 open (3 std) at exit.
+==908761== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==908761==    <inherited from parent>
+==908761== 
+==908761== Open file descriptor 43: /home/blucken/.config/Code/logs/20250210T113655/ptyhost.log
+==908761==    <inherited from parent>
+==908761== 
+==908761== Open file descriptor 3: /home/blucken/Documents/philotest/philosophers_bonus/valgrind.log
+==908761==    <inherited from parent>
+==908761== 
+==908761== Open file descriptor 2: /dev/pts/1
+==908761==    <inherited from parent>
+==908761== 
+==908761== Open file descriptor 1: /dev/pts/1
+==908761==    <inherited from parent>
+==908761== 
+==908761== Open file descriptor 0: /dev/pts/1
+==908761==    <inherited from parent>
+==908761== 
+==908761== 
+==908761== HEAP SUMMARY:
+==908761==     in use at exit: 2,223 bytes in 25 blocks
+==908761==   total heap usage: 27 allocs, 2 frees, 2,245 bytes allocated
+==908761== 
+==908761== 8 bytes in 1 blocks are still reachable in loss record 1 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x10A55A: init_data (init_data.c:90)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are still reachable in loss record 2 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A198: init_sem (init_data.c:34)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are still reachable in loss record 3 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A1EC: init_sem (init_data.c:38)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are still reachable in loss record 4 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A240: init_sem (init_data.c:42)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are still reachable in loss record 5 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x10A2F1: init_philo (init_data.c:58)
+==908761==    by 0x10A521: init_data (init_data.c:88)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are still reachable in loss record 6 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x109F4F: open_sem (init_monitor_sem.c:42)
+==908761==    by 0x109FC4: init_monitor_sem (init_monitor_sem.c:55)
+==908761==    by 0x109CEB: philo (philo.c:85)
+==908761==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908761==    by 0x10946D: main (main.c:26)
+==908761== 
+==908761== 24 bytes in 1 blocks are possibly lost in loss record 7 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F34: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A14A: init_sem (init_data.c:30)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 24 bytes in 1 blocks are possibly lost in loss record 8 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A28B: init_sem (init_data.c:46)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 26 bytes in 2 blocks are still reachable in loss record 9 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x10B2E3: set_sem_name (sem_names.c:25)
+==908761==    by 0x10B380: set_names (sem_names.c:40)
+==908761==    by 0x10A432: init_philo (init_data.c:71)
+==908761==    by 0x10A521: init_data (init_data.c:88)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 44 bytes in 1 blocks are still reachable in loss record 10 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A1EC: init_sem (init_data.c:38)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 44 bytes in 1 blocks are still reachable in loss record 11 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A240: init_sem (init_data.c:42)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 44 bytes in 1 blocks are possibly lost in loss record 12 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A28B: init_sem (init_data.c:46)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 45 bytes in 1 blocks are still reachable in loss record 13 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A198: init_sem (init_data.c:34)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 45 bytes in 1 blocks are still reachable in loss record 14 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x109F4F: open_sem (init_monitor_sem.c:42)
+==908761==    by 0x109FC4: init_monitor_sem (init_monitor_sem.c:55)
+==908761==    by 0x109CEB: philo (philo.c:85)
+==908761==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908761==    by 0x10946D: main (main.c:26)
+==908761== 
+==908761== 45 bytes in 1 blocks are possibly lost in loss record 15 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A14A: init_sem (init_data.c:30)
+==908761==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 48 bytes in 2 blocks are still reachable in loss record 16 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10B51C: start_philo (init_philo.c:25)
+==908761==    by 0x10946D: main (main.c:26)
+==908761== 
+==908761== 90 bytes in 2 blocks are still reachable in loss record 17 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908761==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10B51C: start_philo (init_philo.c:25)
+==908761==    by 0x10946D: main (main.c:26)
+==908761== 
+==908761== 144 bytes in 1 blocks are still reachable in loss record 18 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x10A4A4: init_data (init_data.c:82)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908761== 176 bytes in 2 blocks are still reachable in loss record 19 of 21
+==908760== 8 bytes in 1 blocks are still reachable in loss record 1 of 21
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x10A358: init_philo (init_data.c:64)
+==908761==    by 0x10A521: init_data (init_data.c:88)
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x109434: main (main.c:24)
+==908761== 
+==908760==    by 0x10A55A: init_data (init_data.c:90)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908761== 272 bytes in 1 blocks are possibly lost in loss record 20 of 21
+==908761==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==908760== 24 bytes in 1 blocks are still reachable in loss record 2 of 21
+==908761==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==908760==    by 0x4991F34: tsearch (tsearch.c:337)
+==908761==    by 0x49077B4: allocate_stack (allocatestack.c:430)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x49077B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x10A01D: init_monitor_sem (init_monitor_sem.c:61)
+==908760==    by 0x10A14A: init_sem (init_data.c:30)
+==908761==    by 0x109CEB: philo (philo.c:85)
+==908761==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x10946D: main (main.c:26)
+==908760==    by 0x109434: main (main.c:24)
+==908761== 
+==908760== 
+==908760== 24 bytes in 1 blocks are still reachable in loss record 3 of 21
+==908761== 1,024 bytes in 1 blocks are still reachable in loss record 21 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==    by 0x48F0BA3: _IO_file_doallocate (filedoalloc.c:101)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A198: init_sem (init_data.c:34)
+==908761==    by 0x48FFCDF: _IO_doallocbuf (genops.c:347)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908761==    by 0x48FEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==908760== 
+==908761==    by 0x48FD6D4: _IO_new_file_xsputn (fileops.c:1243)
+==908761==    by 0x48FD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==908760== 24 bytes in 1 blocks are still reachable in loss record 4 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    by 0x48E7CA8: outstring_func (vfprintf-internal.c:239)
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    by 0x48E7CA8: __vfprintf_internal (vfprintf-internal.c:1516)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    by 0x48D279E: printf (printf.c:33)
+==908760==    by 0x10A240: init_sem (init_data.c:42)
+==908761==    by 0x10A64C: print_status (print_output.c:21)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908761==    by 0x10A73B: print_output (print_output.c:37)
+==908760==    by 0x109434: main (main.c:24)
+==908761==    by 0x109A2F: take_fork (philo.c:20)
+==908760== 
+==908761==    by 0x109B61: philo_eat_sleep (philo.c:48)
+==908761==    by 0x109C8B: philo_routine (philo.c:73)
+==908761== 
+==908760== 24 bytes in 1 blocks are still reachable in loss record 5 of 21
+==908761== LEAK SUMMARY:
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908761==    definitely lost: 0 bytes in 0 blocks
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908761==    indirectly lost: 0 bytes in 0 blocks
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908761==      possibly lost: 409 bytes in 5 blocks
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908761==    still reachable: 1,814 bytes in 20 blocks
+==908760==    by 0x10A28B: init_sem (init_data.c:46)
+==908761==         suppressed: 0 bytes in 0 blocks
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908761== 
+==908760==    by 0x109434: main (main.c:24)
+==908761== Use --track-origins=yes to see where uninitialised values come from
+==908760== 
+==908761== For lists of detected and suppressed errors, rerun with: -s
+==908761== ERROR SUMMARY: 11 errors from 8 contexts (suppressed: 0 from 0)
+==908760== 24 bytes in 1 blocks are still reachable in loss record 6 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x10A2F1: init_philo (init_data.c:58)
+==908760==    by 0x10A521: init_data (init_data.c:88)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 24 bytes in 1 blocks are still reachable in loss record 7 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10B51C: start_philo (init_philo.c:25)
+==908760==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== 24 bytes in 1 blocks are still reachable in loss record 8 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x109F4F: open_sem (init_monitor_sem.c:42)
+==908760==    by 0x109FC4: init_monitor_sem (init_monitor_sem.c:55)
+==908760==    by 0x109CEB: philo (philo.c:85)
+==908760==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908760==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== 24 bytes in 1 blocks are possibly lost in loss record 9 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908760==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A1EC: init_sem (init_data.c:38)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 26 bytes in 2 blocks are still reachable in loss record 10 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x10B2E3: set_sem_name (sem_names.c:25)
+==908760==    by 0x10B380: set_names (sem_names.c:40)
+==908760==    by 0x10A432: init_philo (init_data.c:71)
+==908760==    by 0x10A521: init_data (init_data.c:88)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 44 bytes in 1 blocks are still reachable in loss record 11 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A240: init_sem (init_data.c:42)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 44 bytes in 1 blocks are still reachable in loss record 12 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A28B: init_sem (init_data.c:46)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 44 bytes in 1 blocks are possibly lost in loss record 13 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A1EC: init_sem (init_data.c:38)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 45 bytes in 1 blocks are still reachable in loss record 14 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A14A: init_sem (init_data.c:30)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 45 bytes in 1 blocks are still reachable in loss record 15 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10A198: init_sem (init_data.c:34)
+==908760==    by 0x10A504: init_data (init_data.c:86)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 45 bytes in 1 blocks are still reachable in loss record 16 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x10B51C: start_philo (init_philo.c:25)
+==908760==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== 45 bytes in 1 blocks are still reachable in loss record 17 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908760==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908760==    by 0x109F4F: open_sem (init_monitor_sem.c:42)
+==908760==    by 0x109FC4: init_monitor_sem (init_monitor_sem.c:55)
+==908760==    by 0x109CEB: philo (philo.c:85)
+==908760==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908760==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== 144 bytes in 1 blocks are still reachable in loss record 18 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x10A4A4: init_data (init_data.c:82)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 176 bytes in 2 blocks are still reachable in loss record 19 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x10A358: init_philo (init_data.c:64)
+==908760==    by 0x10A521: init_data (init_data.c:88)
+==908760==    by 0x109434: main (main.c:24)
+==908760== 
+==908760== 272 bytes in 1 blocks are possibly lost in loss record 20 of 21
+==908760==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==908760==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==908760==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==908760==    by 0x49077B4: allocate_stack (allocatestack.c:430)
+==908760==    by 0x49077B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==908760==    by 0x10A01D: init_monitor_sem (init_monitor_sem.c:61)
+==908760==    by 0x109CEB: philo (philo.c:85)
+==908760==    by 0x10B5B3: start_philo (init_philo.c:35)
+==908760==    by 0x10946D: main (main.c:26)
+==908760== 
+==908760== 1,024 bytes in 1 blocks are still reachable in loss record 21 of 21
+==908760==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908760==    by 0x48F0BA3: _IO_file_doallocate (filedoalloc.c:101)
+==908760==    by 0x48FFCDF: _IO_doallocbuf (genops.c:347)
+==908760==    by 0x48FEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==908760==    by 0x48FD6D4: _IO_new_file_xsputn (fileops.c:1243)
+==908760==    by 0x48FD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==908760==    by 0x48E7CA8: outstring_func (vfprintf-internal.c:239)
+==908760==    by 0x48E7CA8: __vfprintf_internal (vfprintf-internal.c:1516)
+==908760==    by 0x48D279E: printf (printf.c:33)
+==908760==    by 0x10A64C: print_status (print_output.c:21)
+==908760==    by 0x10A73B: print_output (print_output.c:37)
+==908760==    by 0x109A2F: take_fork (philo.c:20)
+==908760==    by 0x109B61: philo_eat_sleep (philo.c:48)
+==908760==    by 0x109C8B: philo_routine (philo.c:73)
+==908760== 
+==908760== LEAK SUMMARY:
+==908760==    definitely lost: 0 bytes in 0 blocks
+==908760==    indirectly lost: 0 bytes in 0 blocks
+==908760==      possibly lost: 340 bytes in 3 blocks
+==908760==    still reachable: 1,814 bytes in 20 blocks
+==908760==         suppressed: 0 bytes in 0 blocks
+==908760== 
+==908760== Use --track-origins=yes to see where uninitialised values come from
+==908760== For lists of detected and suppressed errors, rerun with: -s
+==908760== ERROR SUMMARY: 9 errors from 6 contexts (suppressed: 0 from 0)
+==908758== 8 bytes in 1 blocks are still reachable in loss record 1 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x10A55A: init_data (init_data.c:90)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are still reachable in loss record 2 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F34: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A14A: init_sem (init_data.c:30)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are still reachable in loss record 3 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A198: init_sem (init_data.c:34)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are still reachable in loss record 4 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A240: init_sem (init_data.c:42)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are still reachable in loss record 5 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A28B: init_sem (init_data.c:46)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are still reachable in loss record 6 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x10A2F1: init_philo (init_data.c:58)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 24 bytes in 1 blocks are possibly lost in loss record 7 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A1EC: init_sem (init_data.c:38)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 26 bytes in 2 blocks are still reachable in loss record 8 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x10B2E3: set_sem_name (sem_names.c:25)
+==908758==    by 0x10B380: set_names (sem_names.c:40)
+==908758==    by 0x10A432: init_philo (init_data.c:71)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 44 bytes in 1 blocks are still reachable in loss record 9 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A240: init_sem (init_data.c:42)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 44 bytes in 1 blocks are still reachable in loss record 10 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A28B: init_sem (init_data.c:46)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 44 bytes in 1 blocks are possibly lost in loss record 11 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A1EC: init_sem (init_data.c:38)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 45 bytes in 1 blocks are still reachable in loss record 12 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A14A: init_sem (init_data.c:30)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 45 bytes in 1 blocks are still reachable in loss record 13 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10A198: init_sem (init_data.c:34)
+==908758==    by 0x10A504: init_data (init_data.c:86)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 48 bytes in 2 blocks are still reachable in loss record 14 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x4991F9E: tsearch (tsearch.c:337)
+==908758==    by 0x490E7A1: __sem_check_add_mapping (sem_routines.c:121)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10B51C: start_philo (init_philo.c:25)
+==908758==    by 0x10946D: main (main.c:26)
+==908758== 
+==908758== 90 bytes in 2 blocks are still reachable in loss record 15 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x490E728: __sem_check_add_mapping (sem_routines.c:104)
+==908758==    by 0x490E43B: sem_open@@GLIBC_2.34 (sem_open.c:192)
+==908758==    by 0x10B51C: start_philo (init_philo.c:25)
+==908758==    by 0x10946D: main (main.c:26)
+==908758== 
+==908758== 144 bytes in 1 blocks are still reachable in loss record 16 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x10A4A4: init_data (init_data.c:82)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 176 bytes in 2 blocks are still reachable in loss record 17 of 19
+==908758==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x10A358: init_philo (init_data.c:64)
+==908758==    by 0x10A521: init_data (init_data.c:88)
+==908758==    by 0x109434: main (main.c:24)
+==908758== 
+==908758== 272 bytes in 1 blocks are possibly lost in loss record 18 of 19
+==908758==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==908758==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==908758==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==908758==    by 0x49077B4: allocate_stack (allocatestack.c:430)
+==908758==    by 0x49077B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==908758==    by 0x109896: tread_monitor (monitors.c:82)
+==908758==    by 0x10B5FC: start_philo (init_philo.c:40)
+==908758==    by 0x10946D: main (main.c:26)
+==908758== 
+==908758== 272 bytes in 1 blocks are possibly lost in loss record 19 of 19
+==908758==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==908758==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==908758==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==908758==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==908758==    by 0x49077B4: allocate_stack (allocatestack.c:430)
+==908758==    by 0x49077B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==908758==    by 0x1098C0: tread_monitor (monitors.c:84)
+==908758==    by 0x10B5FC: start_philo (init_philo.c:40)
+==908758==    by 0x10946D: main (main.c:26)
+==908758== 
+==908758== LEAK SUMMARY:
+==908758==    definitely lost: 0 bytes in 0 blocks
+==908758==    indirectly lost: 0 bytes in 0 blocks
+==908758==      possibly lost: 612 bytes in 4 blocks
+==908758==    still reachable: 790 bytes in 19 blocks
+==908758==         suppressed: 0 bytes in 0 blocks
+==908758== 
+==908758== Use --track-origins=yes to see where uninitialised values come from
+==908758== For lists of detected and suppressed errors, rerun with: -s
+==908758== ERROR SUMMARY: 10 errors from 7 contexts (suppressed: 0 from 0)
