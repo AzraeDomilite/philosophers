@@ -1,7 +1,7 @@
 <map id="philo_sleep" name="philo_sleep">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,92,56"/>
-<area shape="rect" id="Node000002" href="$philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="check the protected boolvar sim_status" alt="" coords="140,5,259,31"/>
+<area shape="rect" id="Node000001" title="Custom sleep implementation for philosophers." alt="" coords="5,31,92,56"/>
+<area shape="rect" id="Node000002" href="$philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="Checks if simulation should continue." alt="" coords="140,5,259,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,34,124,28,125,33,93,39"/>
-<area shape="rect" id="Node000003" href="$time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="164,55,235,80"/>
+<area shape="rect" id="Node000003" href="$time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title="Gets current time in milliseconds." alt="" coords="164,55,235,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,48,149,57,148,62,92,53"/>
 </map>

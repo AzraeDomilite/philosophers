@@ -1,40 +1,40 @@
 <map id="monitor" name="monitor">
-<area shape="rect" id="Node000001" title=" " alt="" coords="859,177,923,203"/>
-<area shape="rect" id="Node000002" href="$print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,177,811,203"/>
+<area shape="rect" id="Node000001" title="Monitor thread routine." alt="" coords="859,177,923,203"/>
+<area shape="rect" id="Node000002" href="$print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="721,177,811,203"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,193,811,193,811,188,843,188"/>
-<area shape="rect" id="Node000015" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,5,438,31"/>
+<area shape="rect" id="Node000015" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="356,5,438,31"/>
 <area shape="poly" id="edge26_Node000001_Node000015" title=" " alt="" coords="853,172,772,128,672,85,609,65,545,48,437,27,438,22,546,43,611,59,674,80,774,123,856,167"/>
-<area shape="rect" id="Node000003" href="$philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,152,673,178"/>
+<area shape="rect" id="Node000003" href="$philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="597,152,673,178"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="706,181,673,175,674,170,707,176"/>
-<area shape="rect" id="Node000009" href="$philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,252,453,278"/>
+<area shape="rect" id="Node000009" href="$philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="341,252,453,278"/>
 <area shape="poly" id="edge23_Node000002_Node000009" title=" " alt="" coords="706,205,453,256,452,251,705,200"/>
-<area shape="rect" id="Node000010" href="$monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,304,447,330"/>
+<area shape="rect" id="Node000010" href="$monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="347,304,447,330"/>
 <area shape="poly" id="edge24_Node000002_Node000010" title=" " alt="" coords="723,212,674,233,552,274,447,306,446,301,551,269,672,228,721,207"/>
-<area shape="rect" id="Node000012" href="$philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,104,439,130"/>
+<area shape="rect" id="Node000012" href="$philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="355,104,439,130"/>
 <area shape="poly" id="edge25_Node000002_Node000012" title=" " alt="" coords="732,171,704,155,673,142,610,128,546,120,439,118,439,112,547,115,611,123,674,137,706,150,735,166"/>
-<area shape="rect" id="Node000004" href="$philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,176,549,202"/>
+<area shape="rect" id="Node000004" href="$philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="501,176,549,202"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="594,185,550,194,549,189,593,180"/>
 <area shape="poly" id="edge18_Node000004_Node000002" title=" " alt="" coords="564,187,597,188,721,188,721,193,597,193,564,192"/>
 <area shape="poly" id="edge8_Node000004_Node000003" title=" " alt="" coords="563,169,596,162,597,167,564,174"/>
 <area shape="poly" id="edge9_Node000004_Node000004" title=" " alt="" coords="543,163,536,157,525,155,514,157,508,161,507,167,510,175,505,177,502,167,504,158,512,152,525,149,539,152,546,159"/>
-<area shape="rect" id="Node000005" href="$init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,203,445,228"/>
+<area shape="rect" id="Node000005" href="$init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title="Assigns fork IDs to philosopher." alt="" coords="349,203,445,228"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,199,446,208,444,203,485,194"/>
 <area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="508,215,455,255,452,250,505,211"/>
 <area shape="poly" id="edge12_Node000004_Node000010" title=" " alt="" coords="512,217,488,255,454,292,434,306,431,301,451,288,484,252,508,214"/>
 <area shape="poly" id="edge15_Node000004_Node000012" title=" " alt="" coords="487,177,451,155,408,132,411,128,454,151,489,172"/>
-<area shape="rect" id="Node000013" href="$print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,153,441,179"/>
+<area shape="rect" id="Node000013" href="$print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title="Prints debug information during development." alt="" coords="353,153,441,179"/>
 <area shape="poly" id="edge17_Node000004_Node000013" title=" " alt="" coords="485,185,441,177,442,171,486,179"/>
-<area shape="rect" id="Node000014" href="$print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,55,442,80"/>
+<area shape="rect" id="Node000014" href="$print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="352,55,442,80"/>
 <area shape="poly" id="edge19_Node000004_Node000014" title=" " alt="" coords="507,164,483,128,451,94,434,83,437,78,454,89,487,124,512,161"/>
 <area shape="poly" id="edge21_Node000004_Node000015" title=" " alt="" coords="514,162,492,103,474,72,451,44,436,34,439,29,454,40,478,69,496,101,519,160"/>
-<area shape="rect" id="Node000006" href="$init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,184,293,210"/>
+<area shape="rect" id="Node000006" href="$init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="221,184,293,210"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="333,210,293,204,294,199,334,204"/>
-<area shape="rect" id="Node000007" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,111,173,136"/>
+<area shape="rect" id="Node000007" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,111,173,136"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="220,178,159,139,162,135,223,173"/>
 <area shape="rect" id="Node000008" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,85,55,111"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="87,114,55,107,56,101,88,109"/>
 <area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="422,242,451,227,499,195,502,200,454,231,425,246"/>
-<area shape="rect" id="Node000011" href="$monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="236,329,278,355"/>
+<area shape="rect" id="Node000011" href="$monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="236,329,278,355"/>
 <area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="332,331,279,341,278,336,332,326"/>
 <area shape="poly" id="edge14_Node000011_Node000001" title=" " alt="" coords="294,345,397,358,524,365,636,365,678,360,717,345,754,324,788,299,843,245,878,202,882,205,847,248,792,303,757,329,720,350,679,365,637,370,523,370,396,363,293,350"/>
 <area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="454,127,493,152,518,174,514,178,490,157,451,132"/>

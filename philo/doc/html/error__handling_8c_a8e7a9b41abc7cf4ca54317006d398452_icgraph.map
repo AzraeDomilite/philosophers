@@ -1,15 +1,15 @@
 <map id="error_msg" name="error_msg">
-<area shape="rect" id="Node000001" title="take the message and the exit number" alt="" coords="353,81,433,107"/>
-<area shape="rect" id="Node000002" href="$args__handler_8c.html#a3415018432d193fc2a2dbfb33b358549" title="check validity of args" alt="" coords="103,5,176,31"/>
+<area shape="rect" id="Node000001" title="Prints error message and returns exit code." alt="" coords="353,81,433,107"/>
+<area shape="rect" id="Node000002" href="$args__handler_8c.html#a3415018432d193fc2a2dbfb33b358549" title="Validates command line arguments." alt="" coords="103,5,176,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="356,76,304,53,237,35,176,25,177,20,238,30,306,48,358,71"/>
 <area shape="rect" id="Node000003" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,81,55,107"/>
 <area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="338,97,55,97,55,92,338,92"/>
-<area shape="rect" id="Node000004" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="224,107,305,132"/>
+<area shape="rect" id="Node000004" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title="Initializes all required mutexes." alt="" coords="224,107,305,132"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="339,108,306,114,305,109,337,102"/>
-<area shape="rect" id="Node000006" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="224,156,305,182"/>
+<area shape="rect" id="Node000006" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="224,156,305,182"/>
 <area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="358,117,290,158,287,153,355,113"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,42,52,83,49,79,105,38"/>
-<area shape="rect" id="Node000005" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="104,107,174,132"/>
+<area shape="rect" id="Node000005" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="104,107,174,132"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,122,175,122,175,117,208,117"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="88,110,55,102,56,97,90,105"/>
 <area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="208,170,156,163,102,147,69,129,44,109,47,105,72,125,104,142,157,157,209,164"/>

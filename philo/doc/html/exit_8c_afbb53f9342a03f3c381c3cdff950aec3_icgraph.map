@@ -1,12 +1,12 @@
 <map id="free_data" name="free_data">
 <area shape="rect" id="Node000001" title=" " alt="" coords="360,56,436,82"/>
-<area shape="rect" id="Node000002" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="231,5,312,31"/>
+<area shape="rect" id="Node000002" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title="Initializes all required mutexes." alt="" coords="231,5,312,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="349,52,305,34,307,29,351,47"/>
 <area shape="rect" id="Node000004" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,56,55,82"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="345,72,55,72,55,66,345,66"/>
-<area shape="rect" id="Node000005" href="$exit_8c.html#a09993f04a5b85125570311d529ba2dc3" title=" " alt="" coords="103,107,183,132"/>
+<area shape="rect" id="Node000005" href="$exit_8c.html#a09993f04a5b85125570311d529ba2dc3" title="Stops all philosopher threads and performs cleanup." alt="" coords="103,107,183,132"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="346,83,313,90,184,115,183,110,312,85,344,78"/>
-<area shape="rect" id="Node000003" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="108,5,178,31"/>
+<area shape="rect" id="Node000003" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="108,5,178,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,21,178,21,178,16,215,16"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,40,56,60,54,55,98,35"/>
 <area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="98,102,54,82,56,77,100,97"/>

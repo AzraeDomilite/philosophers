@@ -1,6 +1,6 @@
 <map id="destroy_mutex" name="destroy_mutex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="231,5,338,31"/>
-<area shape="rect" id="Node000002" href="$exit_8c.html#a09993f04a5b85125570311d529ba2dc3" title=" " alt="" coords="103,5,183,31"/>
+<area shape="rect" id="Node000001" title="Destroys all mutexes used in the program." alt="" coords="231,5,338,31"/>
+<area shape="rect" id="Node000002" href="$exit_8c.html#a09993f04a5b85125570311d529ba2dc3" title="Stops all philosopher threads and performs cleanup." alt="" coords="103,5,183,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,21,183,21,183,16,216,16"/>
 <area shape="rect" id="Node000003" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,5,55,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>

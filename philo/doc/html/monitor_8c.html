@@ -27,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">philo
    </div>
+   <div id="projectbrief">A solution to the Dining Philosophers problem implemented in C</div>
   </td>
  </tr>
  </tbody>
@@ -120,16 +121,22 @@ Include dependency graph for monitor.c:</div>
 <area shape="poly" title=" " alt="" coords="419,102,645,149,644,155,418,107"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="monitor_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab5d1ea9dfddd1d9be79bb5abf1e1023b" id="r_ab5d1ea9dfddd1d9be79bb5abf1e1023b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a> (<a class="el" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data, bool status)</td></tr>
+<tr class="memdesc:ab5d1ea9dfddd1d9be79bb5abf1e1023b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates simulation status in a thread-safe manner.  <br /></td></tr>
 <tr class="separator:ab5d1ea9dfddd1d9be79bb5abf1e1023b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2521b21a83072feaba9de1be2e7500" id="r_a3a2521b21a83072feaba9de1be2e7500"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a> (<a class="el" href="philo_8h.html#a7b20ce4f97b6f0dc2e44a50c149be74d">t_philo</a> *<a class="el" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>)</td></tr>
+<tr class="memitem:a3a2521b21a83072feaba9de1be2e7500" id="r_a3a2521b21a83072feaba9de1be2e7500"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a> (<a class="el" href="philo_8h.html#a7b20ce4f97b6f0dc2e44a50c149be74d">t_philo</a> *<a class="el" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>)</td></tr>
+<tr class="memdesc:a3a2521b21a83072feaba9de1be2e7500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a philosopher has died.  <br /></td></tr>
 <tr class="separator:a3a2521b21a83072feaba9de1be2e7500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2119f45f1fd2679f3e4539d83b5737" id="r_a1c2119f45f1fd2679f3e4539d83b5737"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c2119f45f1fd2679f3e4539d83b5737">end</a> (<a class="el" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:a1c2119f45f1fd2679f3e4539d83b5737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks ending conditions for the simulation.  <br /></td></tr>
 <tr class="separator:a1c2119f45f1fd2679f3e4539d83b5737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4740b3893e398177f8968de83fba539" id="r_ae4740b3893e398177f8968de83fba539"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4740b3893e398177f8968de83fba539">monitor</a> (void *in_data)</td></tr>
+<tr class="memdesc:ae4740b3893e398177f8968de83fba539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitor thread routine.  <br /></td></tr>
 <tr class="separator:ae4740b3893e398177f8968de83fba539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -155,75 +162,92 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">size_t</span>  index;</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordtype">size_t</span>  nb_philo_reach_max_meals;</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    index = 0;</div>
-<div class="line"><span class="lineno">   40</span>    nb_philo_reach_max_meals = 0;</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">while</span> (index &lt; (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">nb_of_philos</a>)</div>
-<div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>        pthread_mutex_lock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">meal_time_lock</a>);</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a>(data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]))</div>
-<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a> != -1)</div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">if</span> ((data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a72c4da80426bddd9791bd75a940504ee">nb_meal_eat</a>)</div>
-<div class="line"><span class="lineno">   48</span>                &gt;= (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a>)</div>
-<div class="line"><span class="lineno">   49</span>                nb_philo_reach_max_meals++;</div>
-<div class="line"><span class="lineno">   50</span>        pthread_mutex_unlock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">meal_time_lock</a>);</div>
-<div class="line"><span class="lineno">   51</span>        index++;</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (nb_philo_reach_max_meals == (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">nb_of_philos</a></div>
-<div class="line"><span class="lineno">   54</span>        &amp;&amp; data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a> != -1)</div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(data, <span class="keyword">true</span>), <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   57</span>}</div>
-<div class="ttc" id="amonitor_8c_html_a3a2521b21a83072feaba9de1be2e7500"><div class="ttname"><a href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a></div><div class="ttdeci">static bool philo_is_dead(t_philo *philo)</div><div class="ttdef"><b>Definition</b> monitor.c:22</div></div>
-<div class="ttc" id="amonitor_8c_html_ab5d1ea9dfddd1d9be79bb5abf1e1023b"><div class="ttname"><a href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a></div><div class="ttdeci">static void update_sim_status(t_data *data, bool status)</div><div class="ttdef"><b>Definition</b> monitor.c:15</div></div>
-<div class="ttc" id="astructs__data_html_a29cfd286b00e3c40414ff2a1ad34911e"><div class="ttname"><a href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">s_data::nb_time_ph_must_eat</a></div><div class="ttdeci">int nb_time_ph_must_eat</div><div class="ttdef"><b>Definition</b> philo.h:88</div></div>
-<div class="ttc" id="astructs__data_html_aac239f4bd4b89d0c741a846870cb1fa7"><div class="ttname"><a href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">s_data::nb_of_philos</a></div><div class="ttdeci">size_t nb_of_philos</div><div class="ttdef"><b>Definition</b> philo.h:84</div></div>
-<div class="ttc" id="astructs__data_html_afff958a75d09206ee5d51e04fa9ab36b"><div class="ttname"><a href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">s_data::philos</a></div><div class="ttdeci">t_philo ** philos</div><div class="ttdef"><b>Definition</b> philo.h:94</div></div>
-<div class="ttc" id="astructs__philo_html_a5ca987b3078be2c7585da1702ddb160f"><div class="ttname"><a href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">s_philo::meal_time_lock</a></div><div class="ttdeci">pthread_mutex_t meal_time_lock</div><div class="ttdef"><b>Definition</b> philo.h:104</div></div>
-<div class="ttc" id="astructs__philo_html_a72c4da80426bddd9791bd75a940504ee"><div class="ttname"><a href="structs__philo.html#a72c4da80426bddd9791bd75a940504ee">s_philo::nb_meal_eat</a></div><div class="ttdeci">unsigned int nb_meal_eat</div><div class="ttdef"><b>Definition</b> philo.h:102</div></div>
+
+<p>Checks ending conditions for the simulation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Main data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If simulation should end </dd>
+<dd>
+false If simulation should continue</dd></dl>
+<p>Checks for:</p><ul>
+<li>Dead philosophers</li>
+<li>All philosophers reached meal count </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="monitor_8c_source.html#l00058">58</a> of file <a class="el" href="monitor_8c_source.html">monitor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">size_t</span>  index;</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">size_t</span>  nb_philo_reach_max_meals;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    index = 0;</div>
+<div class="line"><span class="lineno">   64</span>    nb_philo_reach_max_meals = 0;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">while</span> (index &lt; (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">nb_of_philos</a>)</div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        pthread_mutex_lock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">meal_time_lock</a>);</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a>(data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]))</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a> != -1)</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> ((data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a72c4da80426bddd9791bd75a940504ee">nb_meal_eat</a>)</div>
+<div class="line"><span class="lineno">   72</span>                &gt;= (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a>)</div>
+<div class="line"><span class="lineno">   73</span>                nb_philo_reach_max_meals++;</div>
+<div class="line"><span class="lineno">   74</span>        pthread_mutex_unlock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">philos</a>[index]-&gt;<a class="code hl_variable" href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">meal_time_lock</a>);</div>
+<div class="line"><span class="lineno">   75</span>        index++;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (nb_philo_reach_max_meals == (<span class="keywordtype">size_t</span>)data-&gt;<a class="code hl_variable" href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">nb_of_philos</a></div>
+<div class="line"><span class="lineno">   78</span>        &amp;&amp; data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a> != -1)</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(data, <span class="keyword">true</span>), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   81</span>}</div>
+<div class="ttc" id="amonitor_8c_html_a3a2521b21a83072feaba9de1be2e7500"><div class="ttname"><a href="#a3a2521b21a83072feaba9de1be2e7500">philo_is_dead</a></div><div class="ttdeci">static bool philo_is_dead(t_philo *philo)</div><div class="ttdoc">Checks if a philosopher has died.</div><div class="ttdef"><b>Definition</b> <a href="monitor_8c_source.html#l00035">monitor.c:35</a></div></div>
+<div class="ttc" id="amonitor_8c_html_ab5d1ea9dfddd1d9be79bb5abf1e1023b"><div class="ttname"><a href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a></div><div class="ttdeci">static void update_sim_status(t_data *data, bool status)</div><div class="ttdoc">Updates simulation status in a thread-safe manner.</div><div class="ttdef"><b>Definition</b> <a href="monitor_8c_source.html#l00021">monitor.c:21</a></div></div>
+<div class="ttc" id="astructs__data_html_a29cfd286b00e3c40414ff2a1ad34911e"><div class="ttname"><a href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">s_data::nb_time_ph_must_eat</a></div><div class="ttdeci">int nb_time_ph_must_eat</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00088">philo.h:88</a></div></div>
+<div class="ttc" id="astructs__data_html_aac239f4bd4b89d0c741a846870cb1fa7"><div class="ttname"><a href="structs__data.html#aac239f4bd4b89d0c741a846870cb1fa7">s_data::nb_of_philos</a></div><div class="ttdeci">size_t nb_of_philos</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00084">philo.h:84</a></div></div>
+<div class="ttc" id="astructs__data_html_afff958a75d09206ee5d51e04fa9ab36b"><div class="ttname"><a href="structs__data.html#afff958a75d09206ee5d51e04fa9ab36b">s_data::philos</a></div><div class="ttdeci">t_philo ** philos</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00094">philo.h:94</a></div></div>
+<div class="ttc" id="astructs__philo_html_a5ca987b3078be2c7585da1702ddb160f"><div class="ttname"><a href="structs__philo.html#a5ca987b3078be2c7585da1702ddb160f">s_philo::meal_time_lock</a></div><div class="ttdeci">pthread_mutex_t meal_time_lock</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00104">philo.h:104</a></div></div>
+<div class="ttc" id="astructs__philo_html_a72c4da80426bddd9791bd75a940504ee"><div class="ttname"><a href="structs__philo.html#a72c4da80426bddd9791bd75a940504ee">s_philo::nb_meal_eat</a></div><div class="ttdeci">unsigned int nb_meal_eat</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00102">philo.h:102</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_cgraph.png" border="0" usemap="#amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_cgraph" alt=""/></div>
 <map name="amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_cgraph" id="amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_cgraph">
-<area shape="rect" title=" " alt="" coords="5,498,48,524"/>
-<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="96,396,196,422"/>
+<area shape="rect" title="Checks ending conditions for the simulation." alt="" coords="5,498,48,524"/>
+<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="96,396,196,422"/>
 <area shape="poly" title=" " alt="" coords="41,495,116,430,120,434,45,499"/>
-<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title=" " alt="" coords="804,548,936,574"/>
+<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title="Updates simulation status in a thread&#45;safe manner." alt="" coords="804,548,936,574"/>
 <area shape="poly" title=" " alt="" coords="47,522,85,547,138,576,201,600,234,607,267,609,546,609,614,606,682,598,801,576,801,581,683,603,614,611,546,615,267,615,233,612,199,605,136,581,82,552,44,526"/>
-<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="984,220,1055,246"/>
+<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title="Gets current time in milliseconds." alt="" coords="984,220,1055,246"/>
 <area shape="poly" title=" " alt="" coords="146,395,162,305,178,241,202,173,234,109,254,80,276,55,302,33,330,17,361,6,395,3,698,3,749,9,798,26,844,51,886,82,924,116,956,149,1002,206,998,209,952,153,920,120,883,86,841,56,796,31,748,14,698,8,395,8,362,12,332,22,305,38,280,58,258,83,239,112,207,175,183,242,167,306,151,396"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="244,244,292,270"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="244,244,292,270"/>
 <area shape="poly" title=" " alt="" coords="156,394,245,281,249,284,160,397"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="500,244,589,270"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="500,244,589,270"/>
 <area shape="poly" title=" " alt="" coords="196,401,250,393,315,379,384,359,450,331,488,307,518,279,522,283,491,311,453,336,386,364,317,384,251,398,197,407"/>
 <area shape="poly" title=" " alt="" coords="191,420,384,475,509,506,637,533,715,545,789,553,789,558,715,550,637,539,508,512,382,480,190,425"/>
 <area shape="poly" title=" " alt="" coords="247,245,243,236,245,226,254,220,268,218,284,221,292,227,288,231,281,225,268,223,256,225,249,230,248,235,251,243"/>
-<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="check the protected boolvar sim_status" alt="" coords="637,144,756,170"/>
+<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="Checks if simulation should continue." alt="" coords="637,144,756,170"/>
 <area shape="poly" title=" " alt="" coords="270,243,277,218,291,186,311,154,339,130,378,112,420,103,462,99,505,101,586,116,650,136,649,141,584,121,505,107,462,105,420,108,380,117,342,134,315,158,295,188,282,219,275,245"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="358,194,434,220"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="358,194,434,220"/>
 <area shape="poly" title=" " alt="" coords="291,253,363,224,365,229,293,258"/>
-<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title=" " alt="" coords="827,447,913,473"/>
+<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title="Delays execution until specified start time." alt="" coords="827,447,913,473"/>
 <area shape="poly" title=" " alt="" coords="277,269,301,312,320,335,342,354,401,386,464,411,529,429,594,443,716,457,812,459,812,465,716,462,593,448,528,435,462,416,398,391,339,358,316,339,297,315,273,272"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="340,144,452,170"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="340,144,452,170"/>
 <area shape="poly" title=" " alt="" coords="285,242,309,217,339,191,367,175,370,180,342,196,313,221,289,246"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="354,295,438,321"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="354,295,438,321"/>
 <area shape="poly" title=" " alt="" coords="287,268,341,292,339,297,285,273"/>
 <area shape="poly" title=" " alt="" coords="359,216,301,240,299,235,357,211"/>
-<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title=" " alt="" coords="501,195,588,221"/>
+<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title="Custom sleep implementation for philosophers." alt="" coords="501,195,588,221"/>
 <area shape="poly" title=" " alt="" coords="434,204,485,205,485,210,434,210"/>
 <area shape="poly" title=" " alt="" coords="435,217,491,236,489,241,434,222"/>
 <area shape="poly" title=" " alt="" coords="588,207,936,224,968,226,968,232,936,229,588,212"/>
 <area shape="poly" title=" " alt="" coords="585,192,641,173,642,178,586,197"/>
 <area shape="poly" title=" " alt="" coords="499,260,308,260,308,255,499,255"/>
 <area shape="poly" title=" " alt="" coords="570,242,588,231,665,177,668,182,590,236,573,246"/>
-<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="664,498,729,524"/>
+<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title="Monitor thread routine." alt="" coords="664,498,729,524"/>
 <area shape="poly" title=" " alt="" coords="556,269,682,483,678,486,551,272"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="652,246,741,272"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="652,246,741,272"/>
 <area shape="poly" title=" " alt="" coords="589,255,637,255,637,261,589,260"/>
 <area shape="poly" title=" " alt="" coords="664,513,397,513,267,513,63,513,63,508,267,508,397,508,664,508"/>
 <area shape="poly" title=" " alt="" coords="729,499,812,474,814,479,730,504"/>
@@ -247,39 +271,39 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_icgraph.png" border="0" usemap="#amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_icgraph" alt=""/></div>
 <map name="amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_icgraph" id="amonitor_8c_a1c2119f45f1fd2679f3e4539d83b5737_icgraph">
-<area shape="rect" title=" " alt="" coords="971,68,1013,94"/>
-<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="859,170,923,196"/>
+<area shape="rect" title="Checks ending conditions for the simulation." alt="" coords="971,68,1013,94"/>
+<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title="Monitor thread routine." alt="" coords="859,170,923,196"/>
 <area shape="poly" title=" " alt="" coords="969,107,907,172,903,168,965,104"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,170,811,196"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="721,170,811,196"/>
 <area shape="poly" title=" " alt="" coords="843,185,811,185,811,180,843,180"/>
-<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,343,438,369"/>
+<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="356,343,438,369"/>
 <area shape="poly" title=" " alt="" coords="849,205,769,241,674,279,546,320,439,349,437,344,544,314,672,273,767,236,847,200"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,195,673,221"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="597,195,673,221"/>
 <area shape="poly" title=" " alt="" coords="707,197,674,203,673,198,706,192"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,294,453,320"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="341,294,453,320"/>
 <area shape="poly" title=" " alt="" coords="739,207,709,229,674,248,617,269,558,285,453,303,452,298,557,279,615,264,672,243,706,224,736,203"/>
-<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,43,447,69"/>
+<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="347,43,447,69"/>
 <area shape="poly" title=" " alt="" coords="731,163,672,132,613,110,552,92,447,68,448,62,554,87,615,105,674,127,734,159"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,146,439,172"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="355,146,439,172"/>
 <area shape="poly" title=" " alt="" coords="706,181,439,164,439,159,706,176"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,219,549,245"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="501,219,549,245"/>
 <area shape="poly" title=" " alt="" coords="594,228,550,237,549,232,593,223"/>
 <area shape="poly" title=" " alt="" coords="565,235,617,238,673,231,713,214,746,194,748,198,715,219,674,236,617,243,564,240"/>
 <area shape="poly" title=" " alt="" coords="563,212,596,205,597,210,564,218"/>
 <area shape="poly" title=" " alt="" coords="543,206,536,200,525,198,514,200,508,204,507,210,510,218,505,220,502,210,504,201,512,195,525,193,539,195,546,202"/>
-<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,244,445,270"/>
+<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title="Assigns fork IDs to philosopher." alt="" coords="349,244,445,270"/>
 <area shape="poly" title=" " alt="" coords="486,242,446,251,444,245,485,237"/>
 <area shape="poly" title=" " alt="" coords="508,258,455,296,452,292,504,254"/>
 <area shape="poly" title=" " alt="" coords="514,205,491,145,473,113,451,85,433,72,436,67,455,81,478,110,496,143,519,203"/>
 <area shape="poly" title=" " alt="" coords="487,219,451,197,408,174,411,170,454,192,489,214"/>
-<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,195,441,221"/>
+<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title="Prints debug information during development." alt="" coords="353,195,441,221"/>
 <area shape="poly" title=" " alt="" coords="485,227,441,219,442,214,486,222"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,95,442,121"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="352,95,442,121"/>
 <area shape="poly" title=" " alt="" coords="507,207,484,171,451,135,432,124,435,119,454,131,488,167,512,204"/>
 <area shape="poly" title=" " alt="" coords="512,260,488,298,454,334,438,345,435,340,451,330,484,294,508,257"/>
-<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,251,293,277"/>
+<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="221,251,293,277"/>
 <area shape="poly" title=" " alt="" coords="334,263,294,265,294,260,334,258"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,256,173,282"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,256,173,282"/>
 <area shape="poly" title=" " alt="" coords="206,269,173,270,173,265,206,264"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,294,55,320"/>
 <area shape="poly" title=" " alt="" coords="89,289,56,301,54,296,87,284"/>
@@ -307,59 +331,75 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_typedef" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a>    *data;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    data = (<a class="code hl_typedef" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *)in_data;</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a>)</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(data, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="philo_8h.html#abbc702365f90dc581ca10aa97d46eb21">start_delay</a>(data-&gt;<a class="code hl_variable" href="structs__data.html#afaae335bea0e58330692a1e5fccee177">start_timer</a>);</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">while</span> (1)</div>
-<div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a1c2119f45f1fd2679f3e4539d83b5737">end</a>(data))</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   72</span>        usleep(1000);</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
-<div class="line"><span class="lineno">   74</span>}</div>
-<div class="ttc" id="amonitor_8c_html_a1c2119f45f1fd2679f3e4539d83b5737"><div class="ttname"><a href="#a1c2119f45f1fd2679f3e4539d83b5737">end</a></div><div class="ttdeci">static bool end(t_data *data)</div><div class="ttdef"><b>Definition</b> monitor.c:34</div></div>
-<div class="ttc" id="aphilo_8h_html_a24e28e95867f9681b9d87781b1caa65b"><div class="ttname"><a href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a></div><div class="ttdeci">struct s_data t_data</div><div class="ttdef"><b>Definition</b> philo.h:80</div></div>
-<div class="ttc" id="aphilo_8h_html_abbc702365f90dc581ca10aa97d46eb21"><div class="ttname"><a href="philo_8h.html#abbc702365f90dc581ca10aa97d46eb21">start_delay</a></div><div class="ttdeci">void start_delay(time_t start_time)</div><div class="ttdef"><b>Definition</b> time.c:23</div></div>
-<div class="ttc" id="astructs__data_html_afaae335bea0e58330692a1e5fccee177"><div class="ttname"><a href="structs__data.html#afaae335bea0e58330692a1e5fccee177">s_data::start_timer</a></div><div class="ttdeci">time_t start_timer</div><div class="ttdef"><b>Definition</b> philo.h:95</div></div>
+
+<p>Monitor thread routine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_data</td><td>Void pointer to main data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void* NULL</dd></dl>
+<p>Continuously monitors:</p><ul>
+<li>Philosopher death conditions</li>
+<li>Meal count requirements</li>
+<li>Overall simulation status </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="monitor_8c_source.html#l00094">94</a> of file <a class="el" href="monitor_8c_source.html">monitor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_typedef" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a>    *data;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    data = (<a class="code hl_typedef" href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *)in_data;</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (!data-&gt;<a class="code hl_variable" href="structs__data.html#a29cfd286b00e3c40414ff2a1ad34911e">nb_time_ph_must_eat</a>)</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(data, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_function" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21">start_delay</a>(data-&gt;<a class="code hl_variable" href="structs__data.html#afaae335bea0e58330692a1e5fccee177">start_timer</a>);</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a1c2119f45f1fd2679f3e4539d83b5737">end</a>(data))</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">  107</span>        usleep(1000);</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="ttc" id="amonitor_8c_html_a1c2119f45f1fd2679f3e4539d83b5737"><div class="ttname"><a href="#a1c2119f45f1fd2679f3e4539d83b5737">end</a></div><div class="ttdeci">static bool end(t_data *data)</div><div class="ttdoc">Checks ending conditions for the simulation.</div><div class="ttdef"><b>Definition</b> <a href="monitor_8c_source.html#l00058">monitor.c:58</a></div></div>
+<div class="ttc" id="aphilo_8h_html_a24e28e95867f9681b9d87781b1caa65b"><div class="ttname"><a href="philo_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a></div><div class="ttdeci">struct s_data t_data</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00080">philo.h:80</a></div></div>
+<div class="ttc" id="astructs__data_html_afaae335bea0e58330692a1e5fccee177"><div class="ttname"><a href="structs__data.html#afaae335bea0e58330692a1e5fccee177">s_data::start_timer</a></div><div class="ttdeci">time_t start_timer</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00095">philo.h:95</a></div></div>
+<div class="ttc" id="atime_8c_html_abbc702365f90dc581ca10aa97d46eb21"><div class="ttname"><a href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21">start_delay</a></div><div class="ttdeci">void start_delay(time_t start_time)</div><div class="ttdoc">Delays execution until specified start time.</div><div class="ttdef"><b>Definition</b> <a href="time_8c_source.html#l00037">time.c:37</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_ae4740b3893e398177f8968de83fba539_cgraph.png" border="0" usemap="#amonitor_8c_ae4740b3893e398177f8968de83fba539_cgraph" alt=""/></div>
 <map name="amonitor_8c_ae4740b3893e398177f8968de83fba539_cgraph" id="amonitor_8c_ae4740b3893e398177f8968de83fba539_cgraph">
-<area shape="rect" title=" " alt="" coords="5,372,70,398"/>
-<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="118,347,160,373"/>
+<area shape="rect" title="Monitor thread routine." alt="" coords="5,372,70,398"/>
+<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="118,347,160,373"/>
 <area shape="poly" title=" " alt="" coords="69,375,102,366,103,372,71,380"/>
-<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title=" " alt="" coords="549,43,634,69"/>
+<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title="Delays execution until specified start time." alt="" coords="549,43,634,69"/>
 <area shape="poly" title=" " alt="" coords="54,370,176,276,263,215,355,158,452,109,539,72,541,77,454,114,358,162,266,219,179,280,57,374"/>
-<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title=" " alt="" coords="356,398,488,424"/>
+<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title="Updates simulation status in a thread&#45;safe manner." alt="" coords="356,398,488,424"/>
 <area shape="poly" title=" " alt="" coords="70,385,341,403,341,408,70,390"/>
-<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="208,296,308,322"/>
+<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="208,296,308,322"/>
 <area shape="poly" title=" " alt="" coords="159,349,211,326,213,331,162,354"/>
 <area shape="poly" title=" " alt="" coords="161,361,341,394,340,399,160,366"/>
-<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="1000,195,1071,221"/>
+<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title="Gets current time in milliseconds." alt="" coords="1000,195,1071,221"/>
 <area shape="poly" title=" " alt="" coords="263,295,301,224,333,177,371,127,416,80,468,40,497,25,526,13,558,5,590,3,741,3,787,8,831,23,872,45,910,72,974,130,1018,181,1014,185,970,134,907,76,870,49,829,28,786,13,741,8,590,8,558,11,528,18,499,30,471,45,420,84,375,130,337,180,306,227,268,297"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="398,196,446,222"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="398,196,446,222"/>
 <area shape="poly" title=" " alt="" coords="280,294,385,228,388,233,283,298"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="695,347,784,373"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="695,347,784,373"/>
 <area shape="poly" title=" " alt="" coords="309,312,680,351,679,356,309,317"/>
 <area shape="poly" title=" " alt="" coords="282,320,310,339,334,358,358,376,378,388,376,393,355,381,330,363,307,343,279,325"/>
 <area shape="poly" title=" " alt="" coords="395,199,389,189,391,179,403,172,422,170,444,173,454,181,450,185,442,178,422,175,405,177,396,182,394,188,400,196"/>
-<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="check the protected boolvar sim_status" alt="" coords="832,195,952,221"/>
+<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="Checks if simulation should continue." alt="" coords="832,195,952,221"/>
 <area shape="poly" title=" " alt="" coords="435,194,477,161,505,144,535,132,579,123,624,121,669,125,713,134,792,159,854,185,852,190,790,164,711,139,668,131,624,127,579,128,536,137,507,149,480,165,439,198"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="553,246,630,272"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="553,246,630,272"/>
 <area shape="poly" title=" " alt="" coords="447,220,539,249,537,254,446,225"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="536,147,647,173"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="536,147,647,173"/>
 <area shape="poly" title=" " alt="" coords="446,206,551,176,553,181,447,211"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="550,196,633,222"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="550,196,633,222"/>
 <area shape="poly" title=" " alt="" coords="447,213,534,215,534,221,446,218"/>
 <area shape="poly" title=" " alt="" coords="431,194,474,144,534,86,549,75,553,79,537,90,477,148,435,198"/>
 <area shape="poly" title=" " alt="" coords="566,248,460,215,462,210,567,243"/>
-<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title=" " alt="" coords="696,246,783,272"/>
+<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title="Custom sleep implementation for philosophers." alt="" coords="696,246,783,272"/>
 <area shape="poly" title=" " alt="" coords="630,256,681,256,681,261,630,261"/>
 <area shape="poly" title=" " alt="" coords="618,270,649,288,697,326,710,336,707,340,693,330,645,293,615,274"/>
 <area shape="poly" title=" " alt="" coords="783,253,862,245,951,231,984,222,985,227,952,236,862,251,784,258"/>
@@ -367,7 +407,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="715,376,664,401,593,430,510,454,467,461,423,464,257,464,205,458,155,445,110,426,73,408,75,403,112,421,157,439,206,453,257,459,423,459,466,456,509,449,591,425,662,396,713,371"/>
 <area shape="poly" title=" " alt="" coords="694,349,618,323,534,286,490,260,451,234,454,229,493,256,537,282,620,318,695,344"/>
 <area shape="poly" title=" " alt="" coords="752,345,865,230,869,234,756,348"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="847,347,937,373"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="847,347,937,373"/>
 <area shape="poly" title=" " alt="" coords="785,357,832,357,832,363,785,363"/>
 <area shape="poly" title=" " alt="" coords="923,344,950,326,990,279,1018,233,1023,236,994,283,953,330,926,349"/>
 <area shape="poly" title=" " alt="" coords="848,375,785,388,712,394,653,391,598,373,534,337,505,314,478,287,438,237,442,234,482,284,508,310,537,332,600,368,654,385,712,389,784,383,847,370"/>
@@ -388,42 +428,42 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_ae4740b3893e398177f8968de83fba539_icgraph.png" border="0" usemap="#amonitor_8c_ae4740b3893e398177f8968de83fba539_icgraph" alt=""/></div>
 <map name="amonitor_8c_ae4740b3893e398177f8968de83fba539_icgraph" id="amonitor_8c_ae4740b3893e398177f8968de83fba539_icgraph">
-<area shape="rect" title=" " alt="" coords="859,177,923,203"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,177,811,203"/>
+<area shape="rect" title="Monitor thread routine." alt="" coords="859,177,923,203"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="721,177,811,203"/>
 <area shape="poly" title=" " alt="" coords="843,193,811,193,811,188,843,188"/>
-<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,5,438,31"/>
+<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="356,5,438,31"/>
 <area shape="poly" title=" " alt="" coords="853,172,772,128,672,85,609,65,545,48,437,27,438,22,546,43,611,59,674,80,774,123,856,167"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,152,673,178"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="597,152,673,178"/>
 <area shape="poly" title=" " alt="" coords="706,181,673,175,674,170,707,176"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,252,453,278"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="341,252,453,278"/>
 <area shape="poly" title=" " alt="" coords="706,205,453,256,452,251,705,200"/>
-<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,304,447,330"/>
+<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="347,304,447,330"/>
 <area shape="poly" title=" " alt="" coords="723,212,674,233,552,274,447,306,446,301,551,269,672,228,721,207"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,104,439,130"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="355,104,439,130"/>
 <area shape="poly" title=" " alt="" coords="732,171,704,155,673,142,610,128,546,120,439,118,439,112,547,115,611,123,674,137,706,150,735,166"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,176,549,202"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="501,176,549,202"/>
 <area shape="poly" title=" " alt="" coords="594,185,550,194,549,189,593,180"/>
 <area shape="poly" title=" " alt="" coords="564,187,597,188,721,188,721,193,597,193,564,192"/>
 <area shape="poly" title=" " alt="" coords="563,169,596,162,597,167,564,174"/>
 <area shape="poly" title=" " alt="" coords="543,163,536,157,525,155,514,157,508,161,507,167,510,175,505,177,502,167,504,158,512,152,525,149,539,152,546,159"/>
-<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,203,445,228"/>
+<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title="Assigns fork IDs to philosopher." alt="" coords="349,203,445,228"/>
 <area shape="poly" title=" " alt="" coords="486,199,446,208,444,203,485,194"/>
 <area shape="poly" title=" " alt="" coords="508,215,455,255,452,250,505,211"/>
 <area shape="poly" title=" " alt="" coords="512,217,488,255,454,292,434,306,431,301,451,288,484,252,508,214"/>
 <area shape="poly" title=" " alt="" coords="487,177,451,155,408,132,411,128,454,151,489,172"/>
-<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,153,441,179"/>
+<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title="Prints debug information during development." alt="" coords="353,153,441,179"/>
 <area shape="poly" title=" " alt="" coords="485,185,441,177,442,171,486,179"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,55,442,80"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="352,55,442,80"/>
 <area shape="poly" title=" " alt="" coords="507,164,483,128,451,94,434,83,437,78,454,89,487,124,512,161"/>
 <area shape="poly" title=" " alt="" coords="514,162,492,103,474,72,451,44,436,34,439,29,454,40,478,69,496,101,519,160"/>
-<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,184,293,210"/>
+<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="221,184,293,210"/>
 <area shape="poly" title=" " alt="" coords="333,210,293,204,294,199,334,204"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,111,173,136"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,111,173,136"/>
 <area shape="poly" title=" " alt="" coords="220,178,159,139,162,135,223,173"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,85,55,111"/>
 <area shape="poly" title=" " alt="" coords="87,114,55,107,56,101,88,109"/>
 <area shape="poly" title=" " alt="" coords="422,242,451,227,499,195,502,200,454,231,425,246"/>
-<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="236,329,278,355"/>
+<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="236,329,278,355"/>
 <area shape="poly" title=" " alt="" coords="332,331,279,341,278,336,332,326"/>
 <area shape="poly" title=" " alt="" coords="294,345,397,358,524,365,636,365,678,360,717,345,754,324,788,299,843,245,878,202,882,205,847,248,792,303,757,329,720,350,679,365,637,370,523,370,396,363,293,350"/>
 <area shape="poly" title=" " alt="" coords="454,127,493,152,518,174,514,178,490,157,451,132"/>
@@ -456,58 +496,71 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> ((<a class="code hl_function" href="philo_8h.html#accb7067b04d2e2f5fa62ef3dbca3994a">get_time</a>() - <a class="code hl_function" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;last_meal_time) &gt;= <a class="code hl_function" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;data-&gt;time_to_die)</div>
-<div class="line"><span class="lineno">   25</span>    {</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(<a class="code hl_function" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;data, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   27</span>        <a class="code hl_function" href="philo_8h.html#a08c149023bc672e26b0cd3d9d8f37e26">print_output</a>(<a class="code hl_function" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="philo_8h.html#a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269">DIE</a>);</div>
-<div class="line"><span class="lineno">   28</span>        pthread_mutex_unlock(&amp;<a class="code hl_function" href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;meal_time_lock);</div>
-<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   30</span>    }</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="aphilo_8h_html_a08c149023bc672e26b0cd3d9d8f37e26"><div class="ttname"><a href="philo_8h.html#a08c149023bc672e26b0cd3d9d8f37e26">print_output</a></div><div class="ttdeci">void print_output(t_philo *philo, bool monitor, t_status status)</div><div class="ttdef"><b>Definition</b> print_output.c:46</div></div>
-<div class="ttc" id="aphilo_8h_html_a301b35a9ec628e010f5cefe6d25bc9fc"><div class="ttname"><a href="philo_8h.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a></div><div class="ttdeci">void * philo(void *data)</div><div class="ttdoc">even id start thinking, odd go for eat adding a delay for sync starting</div><div class="ttdef"><b>Definition</b> philo.c:105</div></div>
-<div class="ttc" id="aphilo_8h_html_a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269"><div class="ttname"><a href="philo_8h.html#a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269">DIE</a></div><div class="ttdeci">@ DIE</div><div class="ttdef"><b>Definition</b> philo.h:115</div></div>
-<div class="ttc" id="aphilo_8h_html_accb7067b04d2e2f5fa62ef3dbca3994a"><div class="ttname"><a href="philo_8h.html#accb7067b04d2e2f5fa62ef3dbca3994a">get_time</a></div><div class="ttdeci">time_t get_time(void)</div><div class="ttdef"><b>Definition</b> time.c:15</div></div>
+
+<p>Checks if a philosopher has died. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">philo</td><td>Philosopher to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If philosopher has died </dd>
+<dd>
+false If philosopher is alive </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="monitor_8c_source.html#l00035">35</a> of file <a class="el" href="monitor_8c_source.html">monitor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> ((<a class="code hl_function" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a">get_time</a>() - <a class="code hl_function" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;last_meal_time) &gt;= <a class="code hl_function" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;data-&gt;time_to_die)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_function" href="#ab5d1ea9dfddd1d9be79bb5abf1e1023b">update_sim_status</a>(<a class="code hl_function" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;data, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_function" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26">print_output</a>(<a class="code hl_function" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="philo_8h.html#a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269">DIE</a>);</div>
+<div class="line"><span class="lineno">   41</span>        pthread_mutex_unlock(&amp;<a class="code hl_function" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a>-&gt;meal_time_lock);</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   45</span>}</div>
+<div class="ttc" id="aphilo_8c_html_a301b35a9ec628e010f5cefe6d25bc9fc"><div class="ttname"><a href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc">philo</a></div><div class="ttdeci">void * philo(void *data)</div><div class="ttdoc">Main philosopher routine running as a thread.</div><div class="ttdef"><b>Definition</b> <a href="philo_8c_source.html#l00134">philo.c:134</a></div></div>
+<div class="ttc" id="aphilo_8h_html_a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269"><div class="ttname"><a href="philo_8h.html#a36ed09b104fd43451893a3170c3fd9bda20658a044abed2bacbb5defa6969c269">DIE</a></div><div class="ttdeci">@ DIE</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00115">philo.h:115</a></div></div>
+<div class="ttc" id="aprint__output_8c_html_a08c149023bc672e26b0cd3d9d8f37e26"><div class="ttname"><a href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26">print_output</a></div><div class="ttdeci">void print_output(t_philo *philo, bool monitor, t_status status)</div><div class="ttdoc">Thread-safe status output function.</div><div class="ttdef"><b>Definition</b> <a href="print__output_8c_source.html#l00081">print_output.c:81</a></div></div>
+<div class="ttc" id="atime_8c_html_accb7067b04d2e2f5fa62ef3dbca3994a"><div class="ttname"><a href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a">get_time</a></div><div class="ttdeci">time_t get_time(void)</div><div class="ttdoc">Gets current time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="time_8c_source.html#l00022">time.c:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_a3a2521b21a83072feaba9de1be2e7500_cgraph.png" border="0" usemap="#amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_cgraph" alt=""/></div>
 <map name="amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_cgraph" id="amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_cgraph">
-<area shape="rect" title=" " alt="" coords="5,396,106,422"/>
-<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="877,195,949,221"/>
+<area shape="rect" title="Checks if a philosopher has died." alt="" coords="5,396,106,422"/>
+<area shape="rect" href="time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title="Gets current time in milliseconds." alt="" coords="877,195,949,221"/>
 <area shape="poly" title=" " alt="" coords="56,395,71,305,88,241,112,173,144,109,164,80,186,55,211,33,239,17,270,6,304,3,608,3,655,8,700,23,743,45,783,72,849,130,894,181,890,185,845,134,779,76,740,49,698,28,654,13,608,8,304,8,271,12,241,22,214,38,190,58,168,83,149,112,117,175,93,242,77,306,61,396"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="154,244,202,270"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="154,244,202,270"/>
 <area shape="poly" title=" " alt="" coords="65,394,155,281,159,284,70,397"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="409,296,499,322"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="409,296,499,322"/>
 <area shape="poly" title=" " alt="" coords="106,394,393,322,395,327,107,399"/>
-<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title=" " alt="" coords="847,498,979,524"/>
+<area shape="rect" href="monitor_8c.html#ab5d1ea9dfddd1d9be79bb5abf1e1023b" title="Updates simulation status in a thread&#45;safe manner." alt="" coords="847,498,979,524"/>
 <area shape="poly" title=" " alt="" coords="70,421,106,458,160,504,193,525,229,542,266,554,304,559,608,559,672,555,735,547,847,525,848,530,736,553,672,561,608,564,304,564,265,560,227,547,191,530,157,508,102,462,66,425"/>
 <area shape="poly" title=" " alt="" coords="156,245,152,236,155,226,164,220,178,218,193,221,201,227,198,231,191,225,178,223,166,225,159,230,158,235,161,243"/>
-<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="check the protected boolvar sim_status" alt="" coords="547,195,666,221"/>
+<area shape="rect" href="philo_8c.html#adb4b21753317f5e584e6173adb4f471f" title="Checks if simulation should continue." alt="" coords="547,195,666,221"/>
 <area shape="poly" title=" " alt="" coords="180,243,187,218,200,187,221,156,248,131,283,113,314,102,343,97,371,96,429,108,500,130,546,153,583,182,579,186,543,157,498,134,428,113,370,102,343,102,315,107,285,118,252,136,225,159,205,189,192,220,185,245"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="268,244,344,270"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="268,244,344,270"/>
 <area shape="poly" title=" " alt="" coords="202,262,252,264,252,269,202,267"/>
-<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title=" " alt="" coords="714,396,799,422"/>
+<area shape="rect" href="time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title="Delays execution until specified start time." alt="" coords="714,396,799,422"/>
 <area shape="poly" title=" " alt="" coords="188,269,212,307,230,327,251,343,308,370,368,389,430,403,492,411,608,416,699,413,699,418,608,422,492,416,430,408,367,394,306,374,249,348,226,331,208,311,183,272"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="250,195,361,221"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="250,195,361,221"/>
 <area shape="poly" title=" " alt="" coords="201,253,273,226,274,231,203,258"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="264,146,347,172"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="264,146,347,172"/>
 <area shape="poly" title=" " alt="" coords="195,242,219,218,248,192,277,177,279,181,252,197,223,221,199,246"/>
 <area shape="poly" title=" " alt="" coords="267,252,217,252,217,246,267,246"/>
-<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title=" " alt="" coords="411,144,497,170"/>
+<area shape="rect" href="time_8c.html#ae730767ab5ab31694146f60cc7d91c8c" title="Custom sleep implementation for philosophers." alt="" coords="411,144,497,170"/>
 <area shape="poly" title=" " alt="" coords="340,242,360,231,396,205,427,179,430,183,399,209,363,236,342,246"/>
 <area shape="poly" title=" " alt="" coords="345,268,402,288,400,293,343,273"/>
 <area shape="poly" title=" " alt="" coords="498,159,862,200,862,205,497,165"/>
 <area shape="poly" title=" " alt="" coords="496,168,552,187,550,192,494,173"/>
 <area shape="poly" title=" " alt="" coords="408,309,334,301,249,285,216,275,217,270,251,280,334,295,409,304"/>
 <area shape="poly" title=" " alt="" coords="473,294,571,228,574,232,476,298"/>
-<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="574,447,638,473"/>
+<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title="Monitor thread routine." alt="" coords="574,447,638,473"/>
 <area shape="poly" title=" " alt="" coords="471,321,583,434,580,438,467,325"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="562,296,651,322"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="562,296,651,322"/>
 <area shape="poly" title=" " alt="" coords="499,307,546,307,546,312,499,312"/>
-<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="736,498,778,524"/>
+<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="736,498,778,524"/>
 <area shape="poly" title=" " alt="" coords="640,468,722,496,720,501,638,473"/>
 <area shape="poly" title=" " alt="" coords="639,461,800,483,842,491,841,496,799,488,639,466"/>
 <area shape="poly" title=" " alt="" coords="638,447,701,425,703,430,640,452"/>
@@ -532,40 +585,40 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_a3a2521b21a83072feaba9de1be2e7500_icgraph.png" border="0" usemap="#amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_icgraph" alt=""/></div>
 <map name="amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_icgraph" id="amonitor_8c_a3a2521b21a83072feaba9de1be2e7500_icgraph">
-<area shape="rect" title=" " alt="" coords="1068,179,1169,204"/>
-<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="978,128,1020,154"/>
+<area shape="rect" title="Checks if a philosopher has died." alt="" coords="1068,179,1169,204"/>
+<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="978,128,1020,154"/>
 <area shape="poly" title=" " alt="" coords="1072,175,1020,152,1022,147,1074,170"/>
-<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="866,128,930,154"/>
+<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title="Monitor thread routine." alt="" coords="866,128,930,154"/>
 <area shape="poly" title=" " alt="" coords="962,144,930,144,930,138,962,138"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="728,153,818,179"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="728,153,818,179"/>
 <area shape="poly" title=" " alt="" coords="851,153,819,160,818,154,850,148"/>
-<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,5,438,31"/>
+<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="356,5,438,31"/>
 <area shape="poly" title=" " alt="" coords="850,132,680,90,437,31,439,25,681,85,852,127"/>
 <area shape="poly" title=" " alt="" coords="833,168,1068,185,1067,191,833,173"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="359,252,435,278"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="359,252,435,278"/>
 <area shape="poly" title=" " alt="" coords="725,187,681,202,547,237,436,260,435,255,545,232,680,197,723,182"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,104,453,130"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="341,104,453,130"/>
 <area shape="poly" title=" " alt="" coords="715,151,680,143,559,128,453,121,453,116,559,123,681,138,716,146"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="597,153,680,179"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="597,153,680,179"/>
 <area shape="poly" title=" " alt="" coords="713,169,681,169,681,164,713,164"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,177,549,203"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="501,177,549,203"/>
 <area shape="poly" title=" " alt="" coords="422,242,451,227,499,196,502,200,454,231,424,246"/>
 <area shape="poly" title=" " alt="" coords="552,211,592,243,645,277,706,304,739,313,772,316,899,316,932,312,964,302,995,288,1023,271,1071,234,1103,203,1107,206,1075,238,1026,276,997,293,966,307,933,317,899,321,772,321,738,318,704,309,642,282,589,247,549,215"/>
 <area shape="poly" title=" " alt="" coords="564,188,597,189,639,191,680,189,732,177,733,182,681,194,639,196,597,194,564,194"/>
 <area shape="poly" title=" " alt="" coords="508,216,454,255,437,264,434,259,451,251,504,212"/>
 <area shape="poly" title=" " alt="" coords="543,164,537,158,525,156,514,158,508,162,506,168,509,176,505,178,501,169,503,159,511,153,525,151,539,153,547,160"/>
-<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,203,445,228"/>
+<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title="Assigns fork IDs to philosopher." alt="" coords="349,203,445,228"/>
 <area shape="poly" title=" " alt="" coords="486,200,446,209,444,203,485,195"/>
 <area shape="poly" title=" " alt="" coords="487,177,451,155,408,132,411,128,454,151,489,173"/>
 <area shape="poly" title=" " alt="" coords="563,171,596,164,597,169,565,176"/>
-<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,153,441,179"/>
+<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title="Prints debug information during development." alt="" coords="353,153,441,179"/>
 <area shape="poly" title=" " alt="" coords="485,186,441,177,442,172,486,180"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,55,442,80"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="352,55,442,80"/>
 <area shape="poly" title=" " alt="" coords="508,166,484,129,451,94,434,83,437,78,454,89,488,125,512,163"/>
 <area shape="poly" title=" " alt="" coords="514,163,492,104,474,72,451,44,436,34,439,29,454,40,478,69,496,101,519,161"/>
-<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,167,293,192"/>
+<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="221,167,293,192"/>
 <area shape="poly" title=" " alt="" coords="333,202,293,191,295,186,335,197"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,93,173,119"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,93,173,119"/>
 <area shape="poly" title=" " alt="" coords="220,160,159,122,162,117,223,156"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,68,55,94"/>
 <area shape="poly" title=" " alt="" coords="87,97,55,89,56,84,88,92"/>
@@ -604,55 +657,66 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    pthread_mutex_lock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">sim_status_lock</a>);</div>
-<div class="line"><span class="lineno">   18</span>    data-&gt;<a class="code hl_variable" href="structs__data.html#ab153591d15d7987b248cc4d40c9167c5">sim_status</a> = status;</div>
-<div class="line"><span class="lineno">   19</span>    pthread_mutex_unlock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">sim_status_lock</a>);</div>
-<div class="line"><span class="lineno">   20</span>}</div>
-<div class="ttc" id="astructs__data_html_ab153591d15d7987b248cc4d40c9167c5"><div class="ttname"><a href="structs__data.html#ab153591d15d7987b248cc4d40c9167c5">s_data::sim_status</a></div><div class="ttdeci">bool sim_status</div><div class="ttdef"><b>Definition</b> philo.h:90</div></div>
-<div class="ttc" id="astructs__data_html_ab57b12b1c8ee6621d688638c7fba65a7"><div class="ttname"><a href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">s_data::sim_status_lock</a></div><div class="ttdeci">pthread_mutex_t sim_status_lock</div><div class="ttdef"><b>Definition</b> philo.h:92</div></div>
+
+<p>Updates simulation status in a thread-safe manner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Main data structure </td></tr>
+    <tr><td class="paramname">status</td><td>New status to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="monitor_8c_source.html#l00021">21</a> of file <a class="el" href="monitor_8c_source.html">monitor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    pthread_mutex_lock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">sim_status_lock</a>);</div>
+<div class="line"><span class="lineno">   24</span>    data-&gt;<a class="code hl_variable" href="structs__data.html#ab153591d15d7987b248cc4d40c9167c5">sim_status</a> = status;</div>
+<div class="line"><span class="lineno">   25</span>    pthread_mutex_unlock(&amp;data-&gt;<a class="code hl_variable" href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">sim_status_lock</a>);</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+<div class="ttc" id="astructs__data_html_ab153591d15d7987b248cc4d40c9167c5"><div class="ttname"><a href="structs__data.html#ab153591d15d7987b248cc4d40c9167c5">s_data::sim_status</a></div><div class="ttdeci">bool sim_status</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00090">philo.h:90</a></div></div>
+<div class="ttc" id="astructs__data_html_ab57b12b1c8ee6621d688638c7fba65a7"><div class="ttname"><a href="structs__data.html#ab57b12b1c8ee6621d688638c7fba65a7">s_data::sim_status_lock</a></div><div class="ttdeci">pthread_mutex_t sim_status_lock</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00092">philo.h:92</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="monitor_8c_ab5d1ea9dfddd1d9be79bb5abf1e1023b_icgraph.png" border="0" usemap="#amonitor_8c_ab5d1ea9dfddd1d9be79bb5abf1e1023b_icgraph" alt=""/></div>
 <map name="amonitor_8c_ab5d1ea9dfddd1d9be79bb5abf1e1023b_icgraph" id="amonitor_8c_ab5d1ea9dfddd1d9be79bb5abf1e1023b_icgraph">
-<area shape="rect" title=" " alt="" coords="1061,329,1193,355"/>
-<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="971,329,1013,355"/>
+<area shape="rect" title="Updates simulation status in a thread&#45;safe manner." alt="" coords="1061,329,1193,355"/>
+<area shape="rect" href="monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title="Checks ending conditions for the simulation." alt="" coords="971,329,1013,355"/>
 <area shape="poly" title=" " alt="" coords="1046,345,1014,345,1014,340,1046,340"/>
-<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="859,253,923,279"/>
+<area shape="rect" href="monitor_8c.html#ae4740b3893e398177f8968de83fba539" title="Monitor thread routine." alt="" coords="859,253,923,279"/>
 <area shape="poly" title=" " alt="" coords="1069,327,923,279,924,274,1071,322"/>
-<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,329,447,355"/>
+<area shape="rect" href="monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title="Checks if a philosopher has died." alt="" coords="347,329,447,355"/>
 <area shape="poly" title=" " alt="" coords="1089,365,1050,383,1001,401,947,415,892,421,634,421,572,414,513,398,461,377,421,358,424,353,463,372,515,393,573,409,634,416,892,416,946,410,1000,396,1048,378,1087,360"/>
 <area shape="poly" title=" " alt="" coords="960,322,908,281,911,277,963,317"/>
-<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,203,811,228"/>
+<area shape="rect" href="print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title="Thread&#45;safe status output function." alt="" coords="721,203,811,228"/>
 <area shape="poly" title=" " alt="" coords="843,250,799,231,801,226,845,245"/>
-<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,5,438,31"/>
+<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="356,5,438,31"/>
 <area shape="poly" title=" " alt="" coords="866,243,832,208,786,165,732,123,672,87,610,63,546,45,438,25,439,20,548,40,612,58,675,82,735,118,790,161,836,204,870,240"/>
-<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,152,673,178"/>
+<area shape="rect" href="philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="Special case handler for single philosopher scenario." alt="" coords="597,152,673,178"/>
 <area shape="poly" title=" " alt="" coords="715,199,669,181,671,176,717,194"/>
-<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,55,453,80"/>
+<area shape="rect" href="philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title="Handles eating and sleeping cycle for a philosopher." alt="" coords="341,55,453,80"/>
 <area shape="poly" title=" " alt="" coords="746,192,715,154,694,136,672,121,617,97,558,82,502,74,453,70,453,65,502,69,559,77,618,92,675,116,698,131,718,150,750,189"/>
 <area shape="poly" title=" " alt="" coords="713,236,438,331,436,326,711,231"/>
-<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,203,439,228"/>
+<area shape="rect" href="philo_8c.html#af58349296d36bec89df38747b1173865" title="Manages philosopher&#39;s thinking state." alt="" coords="355,203,439,228"/>
 <area shape="poly" title=" " alt="" coords="706,218,439,218,439,213,706,213"/>
-<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,152,549,178"/>
+<area shape="rect" href="philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="Main philosopher routine running as a thread." alt="" coords="501,152,549,178"/>
 <area shape="poly" title=" " alt="" coords="581,176,549,175,549,170,582,171"/>
 <area shape="poly" title=" " alt="" coords="563,146,616,132,645,131,674,137,700,150,723,167,756,200,752,204,719,171,697,154,672,142,645,136,617,137,564,151"/>
 <area shape="poly" title=" " alt="" coords="564,154,597,154,597,159,564,159"/>
 <area shape="poly" title=" " alt="" coords="543,139,536,133,525,131,514,133,508,137,507,143,510,151,505,153,502,143,504,134,512,128,525,125,539,128,546,135"/>
-<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,104,445,130"/>
+<area shape="rect" href="init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title="Assigns fork IDs to philosopher." alt="" coords="349,104,445,130"/>
 <area shape="poly" title=" " alt="" coords="486,153,432,133,434,128,488,148"/>
 <area shape="poly" title=" " alt="" coords="493,143,451,106,410,83,412,79,454,101,496,139"/>
 <area shape="poly" title=" " alt="" coords="514,193,489,241,455,293,417,331,413,327,451,290,484,239,509,191"/>
 <area shape="poly" title=" " alt="" coords="494,187,440,210,438,205,492,183"/>
-<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,153,441,179"/>
+<area shape="rect" href="print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title="Prints debug information during development." alt="" coords="353,153,441,179"/>
 <area shape="poly" title=" " alt="" coords="485,168,441,168,441,163,485,163"/>
-<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,253,442,279"/>
+<area shape="rect" href="print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title="Prints formatted status message for philosopher actions." alt="" coords="352,253,442,279"/>
 <area shape="poly" title=" " alt="" coords="506,192,483,218,454,243,434,255,431,251,451,239,479,214,502,188"/>
 <area shape="poly" title=" " alt="" coords="511,139,488,91,471,66,451,44,436,34,439,29,454,40,475,63,492,88,516,136"/>
-<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,92,293,118"/>
+<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="221,92,293,118"/>
 <area shape="poly" title=" " alt="" coords="333,114,294,111,294,105,334,109"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,68,173,94"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,68,173,94"/>
 <area shape="poly" title=" " alt="" coords="206,97,173,90,174,85,207,92"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,43,55,68"/>
 <area shape="poly" title=" " alt="" coords="87,72,55,64,56,59,88,66"/>

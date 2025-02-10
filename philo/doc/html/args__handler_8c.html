@@ -27,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">philo
    </div>
+   <div id="projectbrief">A solution to the Dining Philosophers problem implemented in C</div>
   </td>
  </tr>
  </tbody>
@@ -120,11 +121,13 @@ Include dependency graph for args_handler.c:</div>
 <area shape="poly" title=" " alt="" coords="419,102,645,149,644,155,418,107"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="args__handler_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3415018432d193fc2a2dbfb33b358549" id="r_a3415018432d193fc2a2dbfb33b358549"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3415018432d193fc2a2dbfb33b358549">arg_valid</a> (int ac, char **av)</td></tr>
-<tr class="memdesc:a3415018432d193fc2a2dbfb33b358549"><td class="mdescLeft">&#160;</td><td class="mdescRight">check validity of args  <br /></td></tr>
+<tr class="memdesc:a3415018432d193fc2a2dbfb33b358549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates command line arguments.  <br /></td></tr>
 <tr class="separator:a3415018432d193fc2a2dbfb33b358549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -147,57 +150,65 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>check validity of args </p>
+<p>Validates command line arguments. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ac</td><td></td></tr>
-    <tr><td class="paramname">av</td><td></td></tr>
+    <tr><td class="paramname">ac</td><td>Argument count </td></tr>
+    <tr><td class="paramname">av</td><td>Argument array </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if valid </dd>
+<dl class="section return"><dt>Returns</dt><dd>true If all arguments are valid </dd>
 <dd>
-false </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span> index;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span> arg;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    index = 2;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (ac &gt; index)</div>
-<div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="philo_8h.html#a78c57c5481ef9ccb77411258a56c60b3">ft_is_str_digit</a>(av[index]))</div>
-<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="philo_8h.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#abd936e0f38630c3770b3f0283f3ce1e1">NON_DIGIT_ARGS</a>, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">   33</span>        arg = <a class="code hl_function" href="philo_8h.html#add42b4526258474611c3a359785f84eb">ft_atoi</a>(av[index]);</div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (index == 1 &amp;&amp; arg &gt; <a class="code hl_define" href="philo_8h.html#a8e26b4d75e424f5e24829cb9c987ee6e">MAX_PHILOS</a>)</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="philo_8h.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#a3521b5d026d042cbc2dd05979326a72e">PHILOS_MAX_REACH</a>, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (arg &lt; 0)</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="philo_8h.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#a501c780bf5fbd80c05916bda3dfbe10a">NO_NEG</a>, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">   38</span>        index++;</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   41</span>}</div>
-<div class="ttc" id="aphilo_8h_html_a3521b5d026d042cbc2dd05979326a72e"><div class="ttname"><a href="philo_8h.html#a3521b5d026d042cbc2dd05979326a72e">PHILOS_MAX_REACH</a></div><div class="ttdeci">#define PHILOS_MAX_REACH</div><div class="ttdef"><b>Definition</b> philo.h:58</div></div>
-<div class="ttc" id="aphilo_8h_html_a501c780bf5fbd80c05916bda3dfbe10a"><div class="ttname"><a href="philo_8h.html#a501c780bf5fbd80c05916bda3dfbe10a">NO_NEG</a></div><div class="ttdeci">#define NO_NEG</div><div class="ttdef"><b>Definition</b> philo.h:59</div></div>
-<div class="ttc" id="aphilo_8h_html_a78c57c5481ef9ccb77411258a56c60b3"><div class="ttname"><a href="philo_8h.html#a78c57c5481ef9ccb77411258a56c60b3">ft_is_str_digit</a></div><div class="ttdeci">bool ft_is_str_digit(char *str)</div><div class="ttdef"><b>Definition</b> utils.c:31</div></div>
-<div class="ttc" id="aphilo_8h_html_a8e26b4d75e424f5e24829cb9c987ee6e"><div class="ttname"><a href="philo_8h.html#a8e26b4d75e424f5e24829cb9c987ee6e">MAX_PHILOS</a></div><div class="ttdeci">#define MAX_PHILOS</div><div class="ttdef"><b>Definition</b> philo.h:33</div></div>
-<div class="ttc" id="aphilo_8h_html_a8e7a9b41abc7cf4ca54317006d398452"><div class="ttname"><a href="philo_8h.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a></div><div class="ttdeci">int error_msg(char *str, int exit_nb)</div><div class="ttdoc">take the message and the exit number</div><div class="ttdef"><b>Definition</b> error_handling.c:22</div></div>
-<div class="ttc" id="aphilo_8h_html_abd936e0f38630c3770b3f0283f3ce1e1"><div class="ttname"><a href="philo_8h.html#abd936e0f38630c3770b3f0283f3ce1e1">NON_DIGIT_ARGS</a></div><div class="ttdeci">#define NON_DIGIT_ARGS</div><div class="ttdef"><b>Definition</b> philo.h:57</div></div>
-<div class="ttc" id="aphilo_8h_html_add42b4526258474611c3a359785f84eb"><div class="ttname"><a href="philo_8h.html#add42b4526258474611c3a359785f84eb">ft_atoi</a></div><div class="ttdeci">int ft_atoi(const char *nptr)</div><div class="ttdef"><b>Definition</b> utils.c:52</div></div>
+false If any argument is invalid</dd></dl>
+<p>Checks:</p><ul>
+<li>All arguments are digits</li>
+<li>Number of philosophers doesn't exceed MAX_PHILOS</li>
+<li>No negative values</li>
+<li>Valid ranges for time values </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="args__handler_8c_source.html#l00029">29</a> of file <a class="el" href="args__handler_8c_source.html">args_handler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">int</span> index;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">int</span> arg;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    index = 2;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (ac &gt; index)</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="utils_8c.html#a78c57c5481ef9ccb77411258a56c60b3">ft_is_str_digit</a>(av[index]))</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#abd936e0f38630c3770b3f0283f3ce1e1">NON_DIGIT_ARGS</a>, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">   39</span>        arg = <a class="code hl_function" href="utils_8c.html#add42b4526258474611c3a359785f84eb">ft_atoi</a>(av[index]);</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (index == 1 &amp;&amp; arg &gt; <a class="code hl_define" href="philo_8h.html#a8e26b4d75e424f5e24829cb9c987ee6e">MAX_PHILOS</a>)</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#a3521b5d026d042cbc2dd05979326a72e">PHILOS_MAX_REACH</a>, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (arg &lt; 0)</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a>(<a class="code hl_define" href="philo_8h.html#a501c780bf5fbd80c05916bda3dfbe10a">NO_NEG</a>, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">   44</span>        index++;</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+<div class="ttc" id="aerror__handling_8c_html_a8e7a9b41abc7cf4ca54317006d398452"><div class="ttname"><a href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a></div><div class="ttdeci">int error_msg(char *str, int exit_nb)</div><div class="ttdoc">Prints error message and returns exit code.</div><div class="ttdef"><b>Definition</b> <a href="error__handling_8c_source.html#l00024">error_handling.c:24</a></div></div>
+<div class="ttc" id="aphilo_8h_html_a3521b5d026d042cbc2dd05979326a72e"><div class="ttname"><a href="philo_8h.html#a3521b5d026d042cbc2dd05979326a72e">PHILOS_MAX_REACH</a></div><div class="ttdeci">#define PHILOS_MAX_REACH</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00058">philo.h:58</a></div></div>
+<div class="ttc" id="aphilo_8h_html_a501c780bf5fbd80c05916bda3dfbe10a"><div class="ttname"><a href="philo_8h.html#a501c780bf5fbd80c05916bda3dfbe10a">NO_NEG</a></div><div class="ttdeci">#define NO_NEG</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00059">philo.h:59</a></div></div>
+<div class="ttc" id="aphilo_8h_html_a8e26b4d75e424f5e24829cb9c987ee6e"><div class="ttname"><a href="philo_8h.html#a8e26b4d75e424f5e24829cb9c987ee6e">MAX_PHILOS</a></div><div class="ttdeci">#define MAX_PHILOS</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00033">philo.h:33</a></div></div>
+<div class="ttc" id="aphilo_8h_html_abd936e0f38630c3770b3f0283f3ce1e1"><div class="ttname"><a href="philo_8h.html#abd936e0f38630c3770b3f0283f3ce1e1">NON_DIGIT_ARGS</a></div><div class="ttdeci">#define NON_DIGIT_ARGS</div><div class="ttdef"><b>Definition</b> <a href="philo_8h_source.html#l00057">philo.h:57</a></div></div>
+<div class="ttc" id="autils_8c_html_a78c57c5481ef9ccb77411258a56c60b3"><div class="ttname"><a href="utils_8c.html#a78c57c5481ef9ccb77411258a56c60b3">ft_is_str_digit</a></div><div class="ttdeci">bool ft_is_str_digit(char *str)</div><div class="ttdoc">Validates if string contains only digits.</div><div class="ttdef"><b>Definition</b> <a href="utils_8c_source.html#l00054">utils.c:54</a></div></div>
+<div class="ttc" id="autils_8c_html_add42b4526258474611c3a359785f84eb"><div class="ttname"><a href="utils_8c.html#add42b4526258474611c3a359785f84eb">ft_atoi</a></div><div class="ttdeci">int ft_atoi(const char *nptr)</div><div class="ttdoc">Converts string to integer.</div><div class="ttdef"><b>Definition</b> <a href="utils_8c_source.html#l00092">utils.c:92</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="args__handler_8c_a3415018432d193fc2a2dbfb33b358549_cgraph.png" border="0" usemap="#aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_cgraph" alt=""/></div>
 <map name="aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_cgraph" id="aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_cgraph">
-<area shape="rect" title="check validity of args" alt="" coords="5,55,79,80"/>
-<area shape="rect" href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452" title="take the message and the exit number" alt="" coords="137,5,216,31"/>
+<area shape="rect" title="Validates command line arguments." alt="" coords="5,55,79,80"/>
+<area shape="rect" href="error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452" title="Prints error message and returns exit code." alt="" coords="137,5,216,31"/>
 <area shape="poly" title=" " alt="" coords="78,52,124,34,126,39,80,57"/>
-<area shape="rect" href="utils_8c.html#add42b4526258474611c3a359785f84eb" title=" " alt="" coords="148,104,205,130"/>
+<area shape="rect" href="utils_8c.html#add42b4526258474611c3a359785f84eb" title="Converts string to integer." alt="" coords="148,104,205,130"/>
 <area shape="poly" title=" " alt="" coords="80,78,134,99,133,104,78,83"/>
-<area shape="rect" href="utils_8c.html#a78c57c5481ef9ccb77411258a56c60b3" title=" " alt="" coords="127,55,226,80"/>
+<area shape="rect" href="utils_8c.html#a78c57c5481ef9ccb77411258a56c60b3" title="Validates if string contains only digits." alt="" coords="127,55,226,80"/>
 <area shape="poly" title=" " alt="" coords="79,65,111,65,111,70,79,70"/>
-<area shape="rect" href="utils_8c.html#aab05c48ccd55476e7d4dc017c4dce59f" title=" " alt="" coords="280,55,350,80"/>
+<area shape="rect" href="utils_8c.html#aab05c48ccd55476e7d4dc017c4dce59f" title="Checks if character is a digit." alt="" coords="280,55,350,80"/>
 <area shape="poly" title=" " alt="" coords="204,104,264,83,266,88,206,109"/>
-<area shape="rect" href="utils_8c.html#a3cf519136dd257fd16fa221ab15fa9b6" title=" " alt="" coords="274,104,355,130"/>
+<area shape="rect" href="utils_8c.html#a3cf519136dd257fd16fa221ab15fa9b6" title="Checks if character is whitespace." alt="" coords="274,104,355,130"/>
 <area shape="poly" title=" " alt="" coords="205,114,259,114,259,120,205,120"/>
 <area shape="poly" title=" " alt="" coords="227,65,264,65,264,70,227,70"/>
 </map>
@@ -207,7 +218,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="args__handler_8c_a3415018432d193fc2a2dbfb33b358549_icgraph.png" border="0" usemap="#aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_icgraph" alt=""/></div>
 <map name="aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_icgraph" id="aargs__handler_8c_a3415018432d193fc2a2dbfb33b358549_icgraph">
-<area shape="rect" title="check validity of args" alt="" coords="103,5,176,31"/>
+<area shape="rect" title="Validates command line arguments." alt="" coords="103,5,176,31"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

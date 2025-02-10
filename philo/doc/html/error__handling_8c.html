@@ -27,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">philo
    </div>
+   <div id="projectbrief">A solution to the Dining Philosophers problem implemented in C</div>
   </td>
  </tr>
  </tbody>
@@ -120,14 +121,16 @@ Include dependency graph for error_handling.c:</div>
 <area shape="poly" title=" " alt="" coords="419,102,645,149,644,155,418,107"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="error__handling_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8e7a9b41abc7cf4ca54317006d398452" id="r_a8e7a9b41abc7cf4ca54317006d398452"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7a9b41abc7cf4ca54317006d398452">error_msg</a> (char *str, int exit_nb)</td></tr>
-<tr class="memdesc:a8e7a9b41abc7cf4ca54317006d398452"><td class="mdescLeft">&#160;</td><td class="mdescRight">take the message and the exit number  <br /></td></tr>
+<tr class="memdesc:a8e7a9b41abc7cf4ca54317006d398452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints error message and returns exit code.  <br /></td></tr>
 <tr class="separator:a8e7a9b41abc7cf4ca54317006d398452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3b71de0251e89c00322d6f34a6448b" id="r_abf3b71de0251e89c00322d6f34a6448b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf3b71de0251e89c00322d6f34a6448b">null_error_msg</a> (char *str)</td></tr>
-<tr class="memdesc:abf3b71de0251e89c00322d6f34a6448b"><td class="mdescLeft">&#160;</td><td class="mdescRight">take the error msg and return NULL *str  <br /></td></tr>
+<tr class="memdesc:abf3b71de0251e89c00322d6f34a6448b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints error message and returns NULL.  <br /></td></tr>
 <tr class="separator:abf3b71de0251e89c00322d6f34a6448b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -150,35 +153,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>take the message and the exit number </p>
+<p>Prints error message and returns exit code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td></td></tr>
-    <tr><td class="paramname">exit_nb</td><td></td></tr>
+    <tr><td class="paramname">str</td><td>Error message to display </td></tr>
+    <tr><td class="paramname">exit_nb</td><td>Exit code to return </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> (exit_nb);</div>
-<div class="line"><span class="lineno">   26</span>}</div>
+<dl class="section return"><dt>Returns</dt><dd>int The provided exit code</dd></dl>
+<p>Used for general error handling with custom messages </p>
+
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00024">24</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> (exit_nb);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_a8e7a9b41abc7cf4ca54317006d398452_icgraph.png" border="0" usemap="#aerror__handling_8c_a8e7a9b41abc7cf4ca54317006d398452_icgraph" alt=""/></div>
 <map name="aerror__handling_8c_a8e7a9b41abc7cf4ca54317006d398452_icgraph" id="aerror__handling_8c_a8e7a9b41abc7cf4ca54317006d398452_icgraph">
-<area shape="rect" title="take the message and the exit number" alt="" coords="353,81,433,107"/>
-<area shape="rect" href="args__handler_8c.html#a3415018432d193fc2a2dbfb33b358549" title="check validity of args" alt="" coords="103,5,176,31"/>
+<area shape="rect" title="Prints error message and returns exit code." alt="" coords="353,81,433,107"/>
+<area shape="rect" href="args__handler_8c.html#a3415018432d193fc2a2dbfb33b358549" title="Validates command line arguments." alt="" coords="103,5,176,31"/>
 <area shape="poly" title=" " alt="" coords="356,76,304,53,237,35,176,25,177,20,238,30,306,48,358,71"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,81,55,107"/>
 <area shape="poly" title=" " alt="" coords="338,97,55,97,55,92,338,92"/>
-<area shape="rect" href="init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="224,107,305,132"/>
+<area shape="rect" href="init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title="Initializes all required mutexes." alt="" coords="224,107,305,132"/>
 <area shape="poly" title=" " alt="" coords="339,108,306,114,305,109,337,102"/>
-<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="224,156,305,182"/>
+<area shape="rect" href="start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Initializes and starts all philosopher threads and monitor thread." alt="" coords="224,156,305,182"/>
 <area shape="poly" title=" " alt="" coords="358,117,290,158,287,153,355,113"/>
 <area shape="poly" title=" " alt="" coords="108,42,52,83,49,79,105,38"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="104,107,174,132"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="104,107,174,132"/>
 <area shape="poly" title=" " alt="" coords="208,122,175,122,175,117,208,117"/>
 <area shape="poly" title=" " alt="" coords="88,110,55,102,56,97,90,105"/>
 <area shape="poly" title=" " alt="" coords="208,170,156,163,102,147,69,129,44,109,47,105,72,125,104,142,157,157,209,164"/>
@@ -202,33 +208,36 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>take the error msg and return NULL *str </p>
+<p>Prints error message and returns NULL. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">str</td><td>Error message to display </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<dl class="section return"><dt>Returns</dt><dd>void* Always returns NULL</dd></dl>
+<p>Specialized for functions that return pointers </p>
+
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00038">38</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_abf3b71de0251e89c00322d6f34a6448b_icgraph.png" border="0" usemap="#aerror__handling_8c_abf3b71de0251e89c00322d6f34a6448b_icgraph" alt=""/></div>
 <map name="aerror__handling_8c_abf3b71de0251e89c00322d6f34a6448b_icgraph" id="aerror__handling_8c_abf3b71de0251e89c00322d6f34a6448b_icgraph">
-<area shape="rect" title="take the error msg and return NULL *str" alt="" coords="473,27,579,53"/>
-<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,27,173,53"/>
+<area shape="rect" title="Prints error message and returns NULL." alt="" coords="473,27,579,53"/>
+<area shape="rect" href="init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title="Main initialization function." alt="" coords="103,27,173,53"/>
 <area shape="poly" title=" " alt="" coords="466,25,424,17,323,8,278,10,222,17,174,30,173,24,220,12,278,5,323,3,425,12,467,20"/>
-<area shape="rect" href="init__data_8c.html#ab029158cb50ffb9b31f68821e1d3ec32" title=" " alt="" coords="350,27,425,53"/>
+<area shape="rect" href="init__data_8c.html#ab029158cb50ffb9b31f68821e1d3ec32" title="Initializes fork mutexes." alt="" coords="350,27,425,53"/>
 <area shape="poly" title=" " alt="" coords="457,43,425,43,425,37,457,37"/>
-<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="226,77,298,102"/>
+<area shape="rect" href="init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title="Creates and initializes all philosopher structures." alt="" coords="226,77,298,102"/>
 <area shape="poly" title=" " alt="" coords="461,60,425,68,298,88,297,83,424,63,460,55"/>
 <area shape="rect" href="main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,27,55,53"/>
 <area shape="poly" title=" " alt="" coords="87,43,55,43,55,37,87,37"/>
-<area shape="rect" href="init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="221,27,302,53"/>
+<area shape="rect" href="init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title="Initializes all required mutexes." alt="" coords="221,27,302,53"/>
 <area shape="poly" title=" " alt="" coords="335,43,303,43,303,37,335,37"/>
 <area shape="poly" title=" " alt="" coords="206,43,174,43,174,37,206,37"/>
 <area shape="poly" title=" " alt="" coords="212,73,171,56,173,51,214,68"/>
