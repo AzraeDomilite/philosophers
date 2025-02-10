@@ -6,19 +6,25 @@
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:46:47 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 12:18:47 by blucken          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:40:45 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 /**
- * @brief check validity of args
+ * @brief Validates command line arguments
  * 
- * @param ac 
- * @param av 
- * @return true if valid
- * @return false 
+ * @param ac Argument count
+ * @param av Argument array
+ * @return true If all arguments are valid
+ * @return false If any argument is invalid
+ * 
+ * Checks:
+ * - All arguments are digits
+ * - Number of philosophers doesn't exceed MAX_PHILOS
+ * - No negative values
+ * - Valid ranges for time values
  */
 bool	arg_valid(int ac, char **av)
 {

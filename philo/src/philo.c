@@ -6,17 +6,23 @@
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 17:32:55 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/09 17:35:33 by blucken          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:32:35 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 /**
- * @brief 
+ * @brief Manages philosopher's thinking state
  * 
- * @param philo 
- * @param first 
+ * @param philo Philosopher structure
+ * @param first Boolean indicating if this is the first thinking period
+ * 
+ * Calculates optimal thinking time based on:
+ * - Time since last meal
+ * - Time to die
+ * - Time needed to eat
+ * Prevents starvation by adjusting thinking duration
  */
 static void	philo_think(t_philo *philo, bool first)
 {
@@ -37,6 +43,18 @@ static void	philo_think(t_philo *philo, bool first)
 	philo_sleep(philo->data, time_to_think);
 }
 
+/**
+ * @brief Handles eating and sleeping cycle for a philosopher
+ * 
+ * @param philo Philosopher structure
+ * 
+ * Sequence:
+ * 1. Acquires both forks
+ * 2. Eats for specified duration
+ * 3. Updates meal count and timestamp
+ * 4. Sleeps for specified duration
+ * 5. Releases forks
+ */
 static void	philo_eat_sleep(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->data->fork_locks[philo->fork[0]]);
@@ -61,11 +79,15 @@ static void	philo_eat_sleep(t_philo *philo)
 }
 
 /**
- * @brief one philo can not eat, so he will just grab a fork
- * and wait for the death
+ * @brief Special case handler for single philosopher scenario
  * 
- * @param philo 
- * @return void* just for null
+ * @param philo Philosopher structure
+ * @return void* NULL
+ * 
+ * Handles the case where only one philosopher exists:
+ * - Takes one fork
+ * - Waits until death
+ * - No eating possible with single fork
  */
 static void	*one_philo(t_philo *philo)
 {
@@ -78,11 +100,13 @@ static void	*one_philo(t_philo *philo)
 }
 
 /**
- * @brief check the protected boolvar sim_status
+ * @brief Checks if simulation should continue
  * 
- * @param data 
- * @return true continue the simulation
- * @return false to end the simulation
+ * @param data Main data structure
+ * @return true Continue simulation
+ * @return false End simulation
+ * 
+ * Thread-safe check of simulation status using mutex protection
  */
 bool	all_philo_is_alive(t_data *data)
 {
@@ -96,11 +120,16 @@ bool	all_philo_is_alive(t_data *data)
 }
 
 /**
- * @brief even id start thinking, odd go for eat
- * adding a delay for sync starting
+ * @brief Main philosopher routine running as a thread
  * 
- * @param data 
- * @return void* 
+ * @param data Void pointer to philosopher structure
+ * @return void* NULL
+ * 
+ * Implements the philosopher's lifecycle:
+ * - Handles initialization
+ * - Manages eating/thinking/sleeping cycles
+ * - Implements staggered start for even/odd philosophers
+ * - Continues until simulation ends
  */
 void	*philo(void *data)
 {

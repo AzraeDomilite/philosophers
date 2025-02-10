@@ -6,12 +6,20 @@
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:18:21 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 12:18:44 by blucken          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:32:43 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
+/**
+ * @brief Initializes fork mutexes
+ * 
+ * @param data Main program data structure
+ * @return pthread_mutex_t* Array of initialized mutexes or NULL on error
+ * 
+ * Creates and initializes mutex for each fork in the simulation
+ */
 static pthread_mutex_t	*init_forks(t_data *data)
 {
 	pthread_mutex_t	*forks;
@@ -30,6 +38,14 @@ static pthread_mutex_t	*init_forks(t_data *data)
 	return (forks);
 }
 
+/**
+ * @brief Populates data structure with command line arguments
+ * 
+ * @param data Data structure to fill
+ * @param av Command line arguments array
+ * 
+ * Converts and stores all simulation parameters
+ */
 static void	fill_data(t_data *data, char **av)
 {
 	data->nb_of_philos = ft_atoi(av[1]);
@@ -42,6 +58,13 @@ static void	fill_data(t_data *data, char **av)
 		data->nb_time_ph_must_eat = -1;
 }
 
+/**
+ * @brief Initializes all required mutexes
+ * 
+ * @param data Main program data structure
+ * @return true If all mutexes initialize successfully
+ * @return false If any mutex initialization fails
+ */
 static bool	init_mutex(t_data *data)
 {
 	if (!set(&data->fork_locks, init_forks(data)))
@@ -53,6 +76,17 @@ static bool	init_mutex(t_data *data)
 	return (true);
 }
 
+/**
+ * @brief Main initialization function
+ * 
+ * @param av Command line arguments array
+ * @return t_data* Initialized data structure or NULL on error
+ * 
+ * Performs complete program initialization:
+ * - Allocates main structure
+ * - Sets up all philosophers
+ * - Initializes all mutexes
+ */
 t_data	*init_data(char **av)
 {
 	t_data	*data;

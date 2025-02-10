@@ -5,13 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 13:29:00 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/09 13:29:47 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/10 14:35:06 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/10 14:35:06 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
+/**
+ * @brief Prints formatted status message for philosopher actions
+ * 
+ * @param philo Philosopher structure
+ * @param str Status message to print
+ * @param color ANSI color code for output
+ * 
+ * Formats and prints timestamped philosopher status messages
+ * with optional color coding based on COLOR_MODE setting
+ */
 static void	print_status(t_philo *philo, char *str, char *color)
 {
 	if (COLOR_MODE)
@@ -22,6 +32,15 @@ static void	print_status(t_philo *philo, char *str, char *color)
 			philo->id + 1, str);
 }
 
+/**
+ * @brief Prints debug information during development
+ * 
+ * @param philo Philosopher structure
+ * @param str Debug message
+ * @param i Additional integer value for debugging
+ * 
+ * Thread-safe debug printing function that checks simulation status
+ */
 void	print_debug(t_philo *philo, char *str, int i)
 {
 	pthread_mutex_lock(&philo->data->print_lock);
@@ -34,6 +53,13 @@ void	print_debug(t_philo *philo, char *str, int i)
 	pthread_mutex_unlock(&philo->data->print_lock);
 }
 
+/**
+ * @brief Prints initial configuration data for debug cases
+ * 
+ * @param data Main program data structure
+ * 
+ * Displays all simulation parameters at startup
+ */
 void	print_data(t_data *data)
 {
 	printf("nb of philo 	: %ld\n", data->nb_of_philos);
@@ -43,6 +69,15 @@ void	print_data(t_data *data)
 	printf("nb_must_eat 	: %d\n\n", data->nb_time_ph_must_eat);
 }
 
+/**
+ * @brief Thread-safe status output function
+ * 
+ * @param philo Philosopher structure
+ * @param monitor Whether called from monitor thread
+ * @param status Type of status message to print
+ * 
+ * Handles all philosopher status messages with proper synchronization
+ */
 void	print_output(t_philo *philo, bool monitor, t_status status)
 {
 	pthread_mutex_lock(&philo->data->print_lock);

@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 18:32:33 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/08 18:33:03 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/10 14:31:26 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/10 14:31:29 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 /**
- * @brief Start the simulation, entry point for philo and monitoring functions.
+ * @brief Initializes and starts all philosopher threads and monitor thread
  * 
- * @param data 
- * @return true is simulation start well
- * @return false in case of error
+ * @param data Main data structure containing program configuration
+ * @return true If all threads are created successfully
+ * @return false If thread creation fails
+ * 
+ * Sets up the start timer with a staggered delay based on number of philosophers.
+ * Creates threads for each philosopher and a monitor thread if there's more than one philosopher.
  */
 bool	start_philo(t_data *data)
 {

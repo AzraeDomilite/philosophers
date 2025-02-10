@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 11:49:22 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 11:49:22 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/10 14:34:01 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/10 14:34:03 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 /**
- * @brief take the message and the exit number
+ * @brief Prints error message and returns exit code
  * 
- * @param str 
- * @param exit_nb 
- * @return int 
+ * @param str Error message to display
+ * @param exit_nb Exit code to return
+ * @return int The provided exit code
+ * 
+ * Used for general error handling with custom messages
  */
 int	error_msg(char *str, int exit_nb)
 {
@@ -26,10 +28,12 @@ int	error_msg(char *str, int exit_nb)
 }
 
 /**
- * @brief take the error msg and return NULL *str
+ * @brief Prints error message and returns NULL
  * 
- * @param str 
- * @return void* 
+ * @param str Error message to display
+ * @return void* Always returns NULL
+ * 
+ * Specialized for functions that return pointers
  */
 void	*null_error_msg(char *str)
 {
