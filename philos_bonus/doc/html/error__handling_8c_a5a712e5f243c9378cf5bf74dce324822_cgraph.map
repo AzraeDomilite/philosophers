@@ -1,0 +1,12 @@
+<map id="error_failure" name="error_failure">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,95,80"/>
+<area shape="rect" id="Node000002" href="$error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452" title=" " alt="" coords="143,5,222,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,52,130,35,132,40,88,57"/>
+<area shape="rect" id="Node000003" href="$free_8c.html#afbb53f9342a03f3c381c3cdff950aec3" title=" " alt="" coords="145,55,220,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,65,129,65,129,70,95,70"/>
+<area shape="rect" id="Node000004" href="$free_8c.html#aa74cfdb66df6837a72448de5611028d1" title=" " alt="" coords="270,80,401,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="221,71,255,77,254,82,220,76"/>
+<area shape="poly" id="edge4_Node000004_Node000001" title=" " alt="" coords="270,100,208,100,142,95,105,88,106,82,143,90,208,95,270,94"/>
+<area shape="rect" id="Node000005" href="$utils2_8c.html#aec584de6cf666b79ce3ee37748b925bc" title=" " alt="" coords="449,80,544,106"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="402,90,434,90,434,96,402,96"/>
+</map>

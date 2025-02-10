@@ -1,0 +1,46 @@
+<map id="start_delay" name="start_delay">
+<area shape="rect" id="Node000001" title=" " alt="" coords="971,180,1056,206"/>
+<area shape="rect" id="Node000002" href="$monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="859,256,923,282"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="980,216,915,258,912,253,977,212"/>
+<area shape="rect" id="Node000005" href="$philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,153,549,179"/>
+<area shape="poly" id="edge28_Node000001_Node000005" title=" " alt="" coords="955,179,827,146,750,131,673,119,635,114,618,115,598,119,567,135,542,155,538,151,564,131,596,114,618,109,635,109,674,114,751,126,828,141,957,174"/>
+<area shape="rect" id="Node000003" href="$print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,180,811,206"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="854,250,787,208,790,204,857,246"/>
+<area shape="rect" id="Node000016" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,331,438,356"/>
+<area shape="poly" id="edge27_Node000002_Node000016" title=" " alt="" coords="844,279,439,340,438,335,843,273"/>
+<area shape="rect" id="Node000004" href="$philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,129,673,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="715,176,669,158,671,153,717,171"/>
+<area shape="rect" id="Node000010" href="$philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,231,453,256"/>
+<area shape="poly" id="edge24_Node000003_Node000010" title=" " alt="" coords="706,204,453,239,453,233,705,198"/>
+<area shape="rect" id="Node000011" href="$monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,280,447,306"/>
+<area shape="poly" id="edge25_Node000003_Node000011" title=" " alt="" coords="708,213,674,223,448,283,447,278,673,218,707,208"/>
+<area shape="rect" id="Node000013" href="$philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,83,439,108"/>
+<area shape="poly" id="edge26_Node000003_Node000013" title=" " alt="" coords="742,171,711,142,672,119,611,101,548,93,488,92,439,94,439,88,488,86,548,88,612,96,674,114,714,138,745,167"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="594,162,550,171,549,166,593,157"/>
+<area shape="poly" id="edge19_Node000005_Node000003" title=" " alt="" coords="565,168,721,185,721,191,564,173"/>
+<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="563,147,596,139,597,144,564,152"/>
+<area shape="poly" id="edge10_Node000005_Node000005" title=" " alt="" coords="543,140,536,134,525,132,514,134,508,138,507,144,510,152,505,154,502,145,504,135,512,129,525,127,539,129,546,136"/>
+<area shape="rect" id="Node000006" href="$init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,132,445,158"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="485,162,445,155,445,150,486,157"/>
+<area shape="poly" id="edge11_Node000005_Node000010" title=" " alt="" coords="508,193,455,233,452,229,505,189"/>
+<area shape="poly" id="edge13_Node000005_Node000011" title=" " alt="" coords="513,194,489,233,454,271,438,282,435,277,451,267,484,230,508,192"/>
+<area shape="poly" id="edge16_Node000005_Node000013" title=" " alt="" coords="486,155,451,134,408,111,411,106,454,129,489,150"/>
+<area shape="rect" id="Node000014" href="$print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,181,441,207"/>
+<area shape="poly" id="edge18_Node000005_Node000014" title=" " alt="" coords="486,177,442,187,441,182,485,172"/>
+<area shape="rect" id="Node000015" href="$print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,5,442,31"/>
+<area shape="poly" id="edge20_Node000005_Node000015" title=" " alt="" coords="505,143,451,72,412,34,416,30,455,68,509,139"/>
+<area shape="poly" id="edge22_Node000005_Node000016" title=" " alt="" coords="519,195,497,257,478,290,455,320,438,332,435,328,451,316,474,287,492,254,514,193"/>
+<area shape="rect" id="Node000007" href="$init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,181,293,207"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="345,166,294,184,293,179,343,161"/>
+<area shape="rect" id="Node000008" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,256,173,282"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="223,218,162,258,159,253,221,214"/>
+<area shape="rect" id="Node000009" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,305,55,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="95,291,56,309,54,305,93,286"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="422,220,451,205,499,173,502,178,454,210,425,225"/>
+<area shape="rect" id="Node000012" href="$monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="236,280,278,306"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="331,296,279,296,279,290,331,290"/>
+<area shape="poly" id="edge15_Node000012_Node000002" title=" " alt="" coords="280,316,308,343,343,366,390,385,430,393,524,393,636,393,674,389,710,380,746,366,779,349,835,311,874,280,877,284,838,315,781,353,748,371,712,385,675,395,637,398,523,398,429,398,389,390,340,371,305,347,277,320"/>
+<area shape="poly" id="edge17_Node000013_Node000005" title=" " alt="" coords="454,106,493,130,517,151,514,155,489,134,451,110"/>
+<area shape="poly" id="edge21_Node000015_Node000003" title=" " alt="" coords="458,20,507,28,563,41,620,60,675,87,702,108,726,133,759,178,755,181,722,136,699,112,672,91,618,65,561,46,506,33,457,26"/>
+<area shape="poly" id="edge23_Node000016_Node000009" title=" " alt="" coords="341,342,55,322,55,317,341,337"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="init_mutex" name="init_mutex">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,87,106"/>
+<area shape="rect" id="Node000002" href="$error__handling_8c.html#a8e7a9b41abc7cf4ca54317006d398452" title="take the message and the exit number" alt="" coords="135,5,214,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,77,136,37,139,41,71,82"/>
+<area shape="rect" id="Node000003" href="$exit_8c.html#afbb53f9342a03f3c381c3cdff950aec3" title=" " alt="" coords="137,55,212,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,82,121,75,122,81,88,87"/>
+<area shape="rect" id="Node000004" href="$init__data_8c.html#ab029158cb50ffb9b31f68821e1d3ec32" title=" " alt="" coords="137,104,212,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="88,98,123,104,122,110,87,103"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#a6c091071bf986b5dc0b4283320cbf25e" title=" " alt="" coords="155,153,194,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="72,104,143,145,140,150,69,109"/>
+<area shape="rect" id="Node000005" href="$error__handling_8c.html#abf3b71de0251e89c00322d6f34a6448b" title="take the error msg and return NULL *str" alt="" coords="262,104,368,130"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="212,114,247,114,247,120,212,120"/>
+</map>

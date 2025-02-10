@@ -1,0 +1,9 @@
+<map id="init_forks" name="init_forks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="350,5,425,31"/>
+<area shape="rect" id="Node000002" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="221,5,302,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,21,303,21,303,16,335,16"/>
+<area shape="rect" id="Node000003" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,5,173,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,21,174,21,174,16,206,16"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

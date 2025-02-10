@@ -1,0 +1,5 @@
+<map id="init_data" name="init_data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="103,5,173,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

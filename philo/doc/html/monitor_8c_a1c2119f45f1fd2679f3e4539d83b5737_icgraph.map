@@ -1,0 +1,43 @@
+<map id="end" name="end">
+<area shape="rect" id="Node000001" title=" " alt="" coords="971,68,1013,94"/>
+<area shape="rect" id="Node000002" href="$monitor_8c.html#ae4740b3893e398177f8968de83fba539" title=" " alt="" coords="859,170,923,196"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="969,107,907,172,903,168,965,104"/>
+<area shape="rect" id="Node000003" href="$print__output_8c.html#a08c149023bc672e26b0cd3d9d8f37e26" title=" " alt="" coords="721,170,811,196"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="843,185,811,185,811,180,843,180"/>
+<area shape="rect" id="Node000015" href="$start_8c.html#a077878491aa1b140f11cd3794e6da373" title="Start the simulation, entry point for philo and monitoring functions." alt="" coords="356,343,438,369"/>
+<area shape="poly" id="edge26_Node000002_Node000015" title=" " alt="" coords="849,205,769,241,674,279,546,320,439,349,437,344,544,314,672,273,767,236,847,200"/>
+<area shape="rect" id="Node000004" href="$philo_8c.html#a662fb7520939da3c1cc6a2b70643e216" title="one philo can not eat, so he will just grab a fork and wait for the death" alt="" coords="597,195,673,221"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="707,197,674,203,673,198,706,192"/>
+<area shape="rect" id="Node000010" href="$philo_8c.html#af7b9a22136bb33a6f19e7325cacf56c9" title=" " alt="" coords="341,294,453,320"/>
+<area shape="poly" id="edge23_Node000003_Node000010" title=" " alt="" coords="739,207,709,229,674,248,617,269,558,285,453,303,452,298,557,279,615,264,672,243,706,224,736,203"/>
+<area shape="rect" id="Node000011" href="$monitor_8c.html#a3a2521b21a83072feaba9de1be2e7500" title=" " alt="" coords="347,43,447,69"/>
+<area shape="poly" id="edge24_Node000003_Node000011" title=" " alt="" coords="731,163,672,132,613,110,552,92,447,68,448,62,554,87,615,105,674,127,734,159"/>
+<area shape="rect" id="Node000012" href="$philo_8c.html#af58349296d36bec89df38747b1173865" title=" " alt="" coords="355,146,439,172"/>
+<area shape="poly" id="edge25_Node000003_Node000012" title=" " alt="" coords="706,181,439,164,439,159,706,176"/>
+<area shape="rect" id="Node000005" href="$philo_8c.html#a301b35a9ec628e010f5cefe6d25bc9fc" title="even id start thinking, odd go for eat adding a delay for sync starting" alt="" coords="501,219,549,245"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="594,228,550,237,549,232,593,223"/>
+<area shape="poly" id="edge18_Node000005_Node000003" title=" " alt="" coords="565,235,617,238,673,231,713,214,746,194,748,198,715,219,674,236,617,243,564,240"/>
+<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="563,212,596,205,597,210,564,218"/>
+<area shape="poly" id="edge10_Node000005_Node000005" title=" " alt="" coords="543,206,536,200,525,198,514,200,508,204,507,210,510,218,505,220,502,210,504,201,512,195,525,193,539,195,546,202"/>
+<area shape="rect" id="Node000006" href="$init__philos_8c.html#ad6d0e1d17ed7e55ab97f450bc567c7a0" title=" " alt="" coords="349,244,445,270"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="486,242,446,251,444,245,485,237"/>
+<area shape="poly" id="edge11_Node000005_Node000010" title=" " alt="" coords="508,258,455,296,452,292,504,254"/>
+<area shape="poly" id="edge13_Node000005_Node000011" title=" " alt="" coords="514,205,491,145,473,113,451,85,433,72,436,67,455,81,478,110,496,143,519,203"/>
+<area shape="poly" id="edge15_Node000005_Node000012" title=" " alt="" coords="487,219,451,197,408,174,411,170,454,192,489,214"/>
+<area shape="rect" id="Node000013" href="$print__output_8c.html#add8055a6d79c5e33c2174d9ea680b9d0" title=" " alt="" coords="353,195,441,221"/>
+<area shape="poly" id="edge17_Node000005_Node000013" title=" " alt="" coords="485,227,441,219,442,214,486,222"/>
+<area shape="rect" id="Node000014" href="$print__output_8c.html#a56433556faae25fd0f719d8477f1261a" title=" " alt="" coords="352,95,442,121"/>
+<area shape="poly" id="edge19_Node000005_Node000014" title=" " alt="" coords="507,207,484,171,451,135,432,124,435,119,454,131,488,167,512,204"/>
+<area shape="poly" id="edge21_Node000005_Node000015" title=" " alt="" coords="512,260,488,298,454,334,438,345,435,340,451,330,484,294,508,257"/>
+<area shape="rect" id="Node000007" href="$init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="221,251,293,277"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="334,263,294,265,294,260,334,258"/>
+<area shape="rect" id="Node000008" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,256,173,282"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="206,269,173,270,173,265,206,264"/>
+<area shape="rect" id="Node000009" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,294,55,320"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="89,289,56,301,54,296,87,284"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="422,283,451,268,499,238,502,242,454,273,424,288"/>
+<area shape="poly" id="edge14_Node000011_Node000001" title=" " alt="" coords="450,35,536,14,585,6,634,3,767,3,827,10,885,27,935,48,972,67,969,72,933,53,883,32,826,15,767,8,634,8,585,11,537,19,452,41"/>
+<area shape="poly" id="edge16_Node000012_Node000005" title=" " alt="" coords="454,169,493,195,518,217,514,221,490,199,451,173"/>
+<area shape="poly" id="edge20_Node000014_Node000003" title=" " alt="" coords="457,114,559,130,674,153,723,167,721,172,673,159,558,135,456,119"/>
+<area shape="poly" id="edge22_Node000015_Node000009" title=" " alt="" coords="341,351,55,313,55,307,342,346"/>
+</map>

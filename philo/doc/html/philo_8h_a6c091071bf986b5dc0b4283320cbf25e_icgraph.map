@@ -1,0 +1,14 @@
+<map id="set" name="set">
+<area shape="rect" id="Node000001" title=" " alt="" coords="350,51,390,77"/>
+<area shape="rect" id="Node000002" href="$init__data_8c.html#aef5e3cc1d106edd349c4746c2ffa8226" title=" " alt="" coords="103,51,173,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,43,324,27,301,16,262,8,222,16,186,33,156,53,153,49,183,28,220,11,262,3,303,11,327,23,347,38"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title="start function check the args, fill the data struct then start the simulation finaly stop it and exit..." alt="" coords="5,101,55,126"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="346,90,326,105,303,116,234,130,164,133,102,128,55,121,56,116,102,123,164,128,233,125,301,111,324,100,343,86"/>
+<area shape="rect" id="Node000004" href="$init__data_8c.html#a36e226cda4357c441d83e34fd2e4aee4" title=" " alt="" coords="221,26,302,52"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="334,59,302,51,303,46,335,54"/>
+<area shape="rect" id="Node000005" href="$init__philos_8c.html#a42ec298f528aa81bc718c79702544f11" title=" " alt="" coords="226,75,298,101"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="336,75,299,83,298,78,334,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,87,56,105,54,100,93,82"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="207,53,174,60,173,54,205,48"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="210,81,173,74,174,68,211,76"/>
+</map>

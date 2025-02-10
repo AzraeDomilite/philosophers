@@ -1,0 +1,6 @@
+<map id="s_data" name="s_data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,5,72,31"/>
+<area shape="rect" id="Node000002" href="$structs__philo.html" title=" " alt="" coords="11,109,73,135"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="19,44,11,56,8,70,11,84,29,107,24,110,7,86,3,70,7,54,14,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,93,41,85,41,55,40,31,45,31,46,55,46,85,46,93"/>
+</map>

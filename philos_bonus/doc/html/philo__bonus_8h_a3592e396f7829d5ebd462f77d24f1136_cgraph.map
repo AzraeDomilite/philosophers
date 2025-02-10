@@ -1,0 +1,11 @@
+<map id="death_monitor" name="death_monitor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,109,80"/>
+<area shape="rect" id="Node000002" href="$exit_8c.html#abd46cba2393d6e75b848ae69f6001321" title=" " alt="" coords="157,5,318,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,51,172,33,174,38,108,57"/>
+<area shape="rect" id="Node000003" href="$monitors_8c.html#af0dec79e70c3a385d77c96c8d13d66e6" title=" " alt="" coords="188,55,286,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,65,172,65,172,70,109,70"/>
+<area shape="rect" id="Node000004" href="$time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title=" " alt="" coords="195,104,280,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,78,180,99,179,104,106,84"/>
+<area shape="rect" id="Node000005" href="$time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="366,104,437,130"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="280,114,351,114,351,120,280,120"/>
+</map>

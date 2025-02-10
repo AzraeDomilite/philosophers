@@ -1,0 +1,9 @@
+<map id="philo_monitor" name="philo_monitor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,104,56"/>
+<area shape="rect" id="Node000002" href="$philo__monitor_8c.html#a1c2119f45f1fd2679f3e4539d83b5737" title=" " alt="" coords="173,5,216,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,32,157,22,158,27,105,37"/>
+<area shape="rect" id="Node000003" href="$time_8c.html#abbc702365f90dc581ca10aa97d46eb21" title=" " alt="" coords="152,55,237,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,49,137,55,136,60,104,55"/>
+<area shape="rect" id="Node000004" href="$time_8c.html#accb7067b04d2e2f5fa62ef3dbca3994a" title=" " alt="" coords="285,55,356,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="238,65,269,65,269,70,238,70"/>
+</map>
