@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:35:06 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 14:35:06 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 15:34:29 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 15:39:32 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
  */
 static void	print_status(t_philo *philo, char *str, char *color)
 {
+	if (philo->data->nb_of_philos % 2 && philo->id + 1 == (1 | 3))
+	{
+		if (philo->id == 0)
+			philo->id = 2;
+		else
+			philo->id = 0;
+	}
 	if (COLOR_MODE)
 		printf("%6ld %3d %s%s\n\e[0m", get_time() - philo->data->start_timer,
 			philo->id + 1, color, str);
