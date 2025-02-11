@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:31:26 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 14:31:29 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 14:00:54 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 14:00:58 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
  * @return true If all threads are created successfully
  * @return false If thread creation fails
  * 
- * Sets up the start timer with a staggered delay based on number of philosophers.
- * Creates threads for each philosopher and a monitor thread if there's more than one philosopher.
+ * Sets up the start timer with a staggered delay based
+ * on number of philosophers.
+ * Creates threads for each philosopher and a monitor thread if
+ * there's more than one philosopher.
  */
 bool	start_philo(t_data *data)
 {

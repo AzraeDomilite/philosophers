@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:32:49 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 14:33:02 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 14:01:04 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 14:01:22 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 /**
  * Frees all allocated memory associated with the program data structure
  * 
- * @param data Pointer to the main data structure containing program information
+ * @param data Pointer to the main data structure containing
+ * program information
  * @return Always returns NULL after freeing memory
  * 
  * This function performs cleanup by:
@@ -58,7 +59,8 @@ void	*free_data(t_data *data)
  * - Print lock for synchronized console output
  * - Simulation status lock
  * 
- * @param data Pointer to the main data structure containing all program information
+ * @param data Pointer to the main data structure containing
+ * all program information
  */
 static void	destroy_mutex(t_data *data)
 {
@@ -88,7 +90,8 @@ static void	destroy_mutex(t_data *data)
  * 3. Destroys all mutexes
  * 4. Frees all allocated memory
  * 
- * @param data Pointer to the main data structure containing all program information
+ * @param data Pointer to the main data structure containing
+ * all program information
  */
 void	stop_philo(t_data *data)
 {

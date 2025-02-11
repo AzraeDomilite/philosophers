@@ -6,11 +6,12 @@
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:51:24 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/11 13:56:01 by blucken          ###   ########.fr       */
+/*   Updated: 2025/02/11 14:00:41 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo_bonus.h"
+
 static void	close_philo_sem(t_philo *philo)
 {
 	sem_close(philo->sem_forks);
@@ -20,7 +21,7 @@ static void	close_philo_sem(t_philo *philo)
 	sem_close(philo->sem_meal);
 }
 
-static void close_data_sem(t_data *data)
+static void	close_data_sem(t_data *data)
 {
 	if (data->pids)
 		free(data->pids);
