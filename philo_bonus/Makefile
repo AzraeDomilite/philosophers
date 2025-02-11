@@ -59,6 +59,20 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 	@echo "$(GREEN)Compilation of philo_bonus successful! 🧠💭$(RESET)"
 
+valgrind:
+	@if [ -z "$(ARGS)" ]; then \
+		echo "$(RED)Usage: make valgrind ARGS=\"<number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]\"$(RESET)"; \
+	else \
+		mkdir -p logs && \
+		valgrind \
+			--leak-check=full \
+			--show-leak-kinds=all \
+			--track-origins=yes \
+			--track-fds=yes \
+			--log-file=logs/valgrind_$(shell date +%H:%M:%S_%d_%m_%Y).log \
+			./$(NAME) $(ARGS); \
+	fi
+
 clean:
 	@rm -rf $(OBJ_PATH)
 	@echo "$(RED)Clean of philo_bonus successful 🧹$(RESET)"

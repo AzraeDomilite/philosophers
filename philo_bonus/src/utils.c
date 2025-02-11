@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 13:00:14 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 13:00:17 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 13:26:57 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 13:27:10 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,12 @@ char	*ft_strcat(char	*dst, const char *src)
 char	*ft_utoa(unsigned int nb, size_t len)
 {
 	char	*ret;
+	size_t	index;
 
-	ret = malloc(sizeof * ret * (len + 1));
+	index = 0;
+	ret = malloc(sizeof(char) * (len + 1));
+	while (index < len + 1)
+		ret[index++] = 1;
 	if (!ret)
 		return (NULL);
 	ret[len] = '\0';

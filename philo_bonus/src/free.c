@@ -5,38 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 13:00:31 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 13:00:51 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 13:51:24 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 13:56:01 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo_bonus.h"
+static void	close_philo_sem(t_philo *philo)
+{
+	sem_close(philo->sem_forks);
+	sem_close(philo->sem_philo_dead);
+	sem_close(philo->sem_philo_full);
+	sem_close(philo->sem_write);
+	sem_close(philo->sem_meal);
+}
+
+static void close_data_sem(t_data *data)
+{
+	if (data->pids)
+		free(data->pids);
+	if (data->ate_enought_monitor)
+		pthread_join(data->ate_enought_monitor, NULL);
+	if (data->death_monitor)
+		pthread_join(data->death_monitor, NULL);
+	sem_close(data->sem_forks);
+	sem_close(data->sem_write);
+	sem_close(data->sem_philo_full);
+	sem_close(data->sem_philo_dead);
+	sem_close(data->sem_stop);
+}
 
 void	*free_data(t_data *data)
 {
-	size_t	i;
+	size_t	index;
 
 	if (!data)
 		return (NULL);
 	if (data->philos)
 	{
-		i = 0;
-		while (i < data->nb_of_philos)
+		index = 0;
+		while (index < data->nb_of_philos)
 		{
-			if (data->philos[i])
+			if (data->philos[index])
 			{
-				if (data->philos[i]->sem_meal)
-					sem_close(data->philos[i]->sem_meal);
-				if (data->philos[i]->sem_meal_name)
-					free(data->philos[i]->sem_meal_name);
-				free(data->philos[i++]);
+				close_philo_sem(data->philos[index]);
+				if (data->philos[index]->sem_meal_name)
+					free(data->philos[index]->sem_meal_name);
+				free(data->philos[index++]);
 			}
 		}
 		free(data->philos);
 	}
-	if (data->pids)
-		free(data->pids);
-	sem_error_cleanup(data);
+	close_data_sem(data);
 	free(data);
 	return (NULL);
 }

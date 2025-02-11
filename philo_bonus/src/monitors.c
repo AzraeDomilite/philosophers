@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 17:15:04 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 17:20:59 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 13:26:34 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 13:26:36 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,8 @@ void	*ate_enought_monitor(void *data_monitor)
 	{
 		if (has_simulation_stopped(data))
 			return (NULL);
-
 		if (!has_simulation_stopped(data))
-			data->philo_full_count += 1; 
+			data->philo_full_count += 1;
 		else
 			return (NULL);
 	}

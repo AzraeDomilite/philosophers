@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 18:17:13 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/09 18:35:50 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 13:24:45 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 13:24:57 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	print_status(t_philo *philo, char *str, char *color)
 {
 	if (COLOR_MODE)
 		printf("%6ld %3d %s%s\n\e[0m", get_time() - philo->data->start_timer,
-			philo->id + 1, color, str);
+			philo->id, color, str);
 	else
 		printf("%ld %d %s\n", get_time() - philo->data->start_timer,
-			philo->id + 1, str);
+			philo->id, str);
 }
 
 void	print_output(t_philo *philo, bool monitor, t_status status)

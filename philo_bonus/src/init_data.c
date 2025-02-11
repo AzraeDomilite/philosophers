@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blucken <blucken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 12:42:07 by blucken           #+#    #+#             */
-/*   Updated: 2025/02/10 12:42:20 by blucken          ###   ########.fr       */
+/*   Created: 2025/02/11 13:23:09 by blucken           #+#    #+#             */
+/*   Updated: 2025/02/11 13:24:02 by blucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static t_philo	**init_philo(t_data *data)
 			return (null_error_msg(MALLOC_ERROR));
 		memset(philos[index], 0, sizeof(t_philo));
 		philos[index]->data = data;
-		philos[index]->id = index;
+		philos[index]->id = index + 1;
 		philos[index]->last_meal_time = 0;
 		philos[index]->nb_meal_eat = 0;
 		if (!set_names(philos[index]))
